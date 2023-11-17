@@ -19,7 +19,7 @@ export function PageHeader() {
                     <ArrowLeft/>
                 </Button>
                 )}
-                <div className="flex flex-grow max-w-[600px]">
+                <div className="flex flex-grow max-w-[800px]">
                     <input
                         type="text"
                         placeholder="Search The Vinyl Vault"

@@ -6,6 +6,7 @@ import { Inter } from 'next/font/google'
 import { genres } from "./data/genresStyles"
 import { PageHeader } from '@/components/PageHeader'
 import { GenrePills } from '@/components/GenrePills'
+import { Sidebar } from '@/components/Sidebar'
 
 import './globals.css'
 
@@ -28,7 +29,7 @@ export default function RootLayout({
         <div className="max-h-screen flex flex-col" >
           <PageHeader />
           <div className="grid grid-cols-[auto,1fr] flex-grow-1 overflow-auto">
-            SideBar
+            <Sidebar />
             <div className="overflow-x-hidden mx-8 mb-4 my-4">
               <div className="sticky top-0 mb-4 z-10">
                 <GenrePills 

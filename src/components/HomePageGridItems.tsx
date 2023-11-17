@@ -17,7 +17,7 @@ export function HomePageGridItems({
             <a href={link} className="relative aspect-video w-full rounded-xl overflow-hidden">
                 <Image 
                 src={imagePath}
-                className="text-vault-link block col-span-4  object-fill rounded-xl"
+                className="text-vault-link block col-span-4  object-fill rounded-xl hover:grayscale"
                 alt={title}
                 width={1000} // 100%
                 height={1000} // 100%
