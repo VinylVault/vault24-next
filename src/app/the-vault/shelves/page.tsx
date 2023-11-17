@@ -1,6 +1,6 @@
 "use client"
 import Link from "next/link"
-export default function LibraryShelvesList() {
+export default function TheVaultShelvesList() {
 
     return (
         <div className="flex min-h-screen flex-col items-center p-24 bg-vault-background">

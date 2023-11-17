@@ -22,7 +22,7 @@ export const homepageItems = [
     {
         title: "Show Schedule",
         imagePath: "/assets/eric-rothermel-FoKO4DpXamQ-unsplash.jpg",
-        link: "/show-schedule",
+        link: "/schedule",
     },
     {
         title: "The Vault Blog",
