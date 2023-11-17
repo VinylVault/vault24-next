@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import colors from "tailwindcss/colors"
 
 const config: Config = {
   content: [
@@ -8,11 +9,25 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      fontFamily:{
+        'title': ['Alegreya Sans', 'sans-serif'],
+        'styleGenre': ['Biryani', 'sans-serif']
       },
+      colors: {
+        vault: {
+          text: colors.gray[100],
+          background: colors.slate[700],
+          menubar: colors.slate[800],
+          title: colors.yellow[500],
+          link: colors.lime[500],
+          border: colors.sky[400],
+          live: colors.red[600],
+          genre: colors.orange[500],
+          genreBackground: colors.orange[100],
+          style: colors.pink[500],
+          styleBackground: colors.pink[100]
+        }
+      }
     },
   },
   plugins: [],
