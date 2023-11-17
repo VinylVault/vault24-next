@@ -4,10 +4,10 @@ services:
     app:
       build:
         context: .
-        dockerfile: ./Dockerfile
-      container_name: vault
+        dockerfile: Dockerfile
+      container_name: vault24-next
       ports:
-        - "3000:3000"
+        - '3000:3000'
       volumes:
-        - .:/app
+        - .:./app
         - /app/node_modules
