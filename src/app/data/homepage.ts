@@ -1,7 +1,7 @@
 export const homepageItems = [
     {
         title: "About The Vault",
-        imagePath: "./assets/istockphoto-629626456-1024x1024-vault.jpg",
+        imagePath: "/assets/istockphoto-629626456-1024x1024-vault.jpg",
         link: "/about",
     },
     {

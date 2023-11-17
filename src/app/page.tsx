@@ -1,11 +1,18 @@
 import Image from 'next/image'
+import { HomePageGridItems } from "@/components/HomePageGridItems"
+import { homepageItems} from "./data/homepage"
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col items-center p-24 bg-vault-background">
-      <h1 className='text-6xl font-bold font-title text-vault-text'>Hello Vercel!</h1>
-      <h2 className='text-4xl font-bold font-title text-vault-genre'>Welcome To The Future Home Of .....</h2>
-      <h3 className='text-8xl font-bold font-title text-vault-title'>The Vinyl Vault Show</h3>
-    </div>
+    <div className="grid gap-4 md:grid-cols-3 grid-cols-1 mr-4">
+          {homepageItems.map(item => (
+            <HomePageGridItems
+              key={item.title}
+              title={item.title}
+              link={item.link}
+              imagePath={item.imagePath}
+            />
+          ))}
+        </div>
   )
 }
