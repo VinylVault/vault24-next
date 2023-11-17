@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 import axios from "axios"
 import { useEffect, useState } from "react"
 // const Discogs = require('js_ts_discogs_api_v2_library').default
