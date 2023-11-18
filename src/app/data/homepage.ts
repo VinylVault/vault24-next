@@ -10,6 +10,11 @@ export const homepageItems = [
         link: "/on-air",
     },
     {
+        title: "Show Schedule",
+        imagePath: "/assets/eric-rothermel-FoKO4DpXamQ-unsplash.jpg",
+        link: "/schedule",
+    },
+    {
         title: "Browse The Vault",
         imagePath: "/assets/clay-banks-fEVaiLwWvlU-unsplash.jpg",
         link: "/the-vault",
@@ -20,13 +25,13 @@ export const homepageItems = [
         link: "/show-archive",
     },
     {
-        title: "Show Schedule",
-        imagePath: "/assets/eric-rothermel-FoKO4DpXamQ-unsplash.jpg",
-        link: "/schedule",
-    },
-    {
         title: "The Vault Blog",
         imagePath: "/assets/xavier-von-erlach-5kAEhOx90DA-unsplash.jpg",
         link: "/blog",
+    },
+    {
+        title: "Frequently Asked Questions",
+        imagePath: "",
+        link: "/faqs",
     }
 ]

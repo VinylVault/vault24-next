@@ -13,8 +13,8 @@ import {
   type SidebarContextType = {
     isLargeOpen: boolean
     isSmallOpen: boolean
-    toggle: () => void
-    close: () => void
+    toggleSidebar: () => void
+    closeSidebar: () => void
   }
   
   const SidebarContext = createContext<SidebarContextType | null>(null)
@@ -27,7 +27,7 @@ import {
   }
   
   export function SidebarProvider({ children }: SidebarProviderProps) {
-    const [isLargeOpen, setIsLargeOpen] = useState(true)
+    const [isLargeOpen, setIsLargeOpen] = useState(false)
     const [isSmallOpen, setIsSmallOpen] = useState(false)
   
     useEffect(() => {
@@ -46,15 +46,19 @@ import {
       return window.innerWidth < 1024
     }
   
-    function toggle() {
+    function toggleSidebar() {
       if (isScreenSmall()) {
         setIsSmallOpen(s => !s)
+        console.log(isLargeOpen)
+        console.log(isSmallOpen)
       } else {
         setIsLargeOpen(l => !l)
+        console.log(isLargeOpen)
+        console.log(isSmallOpen)
       }
     }
   
-    function close() {
+    function closeSidebar() {
       if (isScreenSmall()) {
         setIsSmallOpen(false)
       } else {
@@ -67,8 +71,8 @@ import {
         value={{
           isLargeOpen,
           isSmallOpen,
-          toggle,
-          close,
+          toggleSidebar,
+          closeSidebar,
         }}
       >
         {children}

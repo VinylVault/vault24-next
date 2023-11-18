@@ -6,15 +6,9 @@ import { useSidebarContext } from "@/app/contexts/SidebarContext"
 
 export function PageHeader() {
     const [showFullWidthSearch, setShowFullWidthSearch] = useState(false)
-    const { toggle } = useSidebarContext()
     return (
         <div className="flex gap-5 lg:gap-20 justify-between bg-vault-menubar pt-2 pb-2 px-2">
-            <div className={`gap-2 items-center flex-shrink-0  ${showFullWidthSearch ? "hidden" : "flex"}`}>
-                <Button onClick={toggle} size="icon">
-                    <Menu/>
-                </Button>
-                <a href="/" className="text-vault-title italic text-lg md:text-4xl font-title">The Vinyl Vault Show</a>
-            </div>
+            <PageHeaderFirstSection hidden={false}/>
             <form className={`gap-4 flex-grow justify-center" ${showFullWidthSearch ? "flex" : "hidden md:flex"}`}>
                 {showFullWidthSearch && (
                 <Button onClick={() => setShowFullWidthSearch(false)} size="icon">
@@ -45,5 +39,21 @@ export function PageHeader() {
                 </Button>
             </div>
         </div>
+    )
+}
+
+type PageHeaderFirstSectionProps = {
+    hidden: boolean
+}
+
+export function PageHeaderFirstSection({ hidden }: PageHeaderFirstSectionProps) {
+    const { toggleSidebar } = useSidebarContext()
+    return (
+        <div className={`gap-2 items-center flex-shrink-0 bg-vault-menubar  ${hidden ? "hidden" : "flex"}`}>
+                <Button onClick={toggleSidebar} size="icon">
+                    <Menu/>
+                </Button>
+                <a href="/" className="text-vault-title italic text-lg md:text-4xl font-title">The Vinyl Vault Show</a>
+            </div>
     )
 }
