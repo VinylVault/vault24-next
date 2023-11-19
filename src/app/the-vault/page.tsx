@@ -1,16 +1,27 @@
-import { fetchShelves } from "../api/localConnect"
+import { recentReleases } from "@/app/api/localConnect"
+import { ReleaseGridItems } from "@/components/ReleaseGridItems"
+
 
 export default async function TheVault() {
+    
+    let localRecentReleases = undefined
+    localRecentReleases = await recentReleases()
+    console.log(localRecentReleases)
 
     return (
 
         <div className="flex min-h-screen flex-col items-center p-24 bg-vault-background">
-            <h1 className='text-6xl font-bold font-title text-vault-text'>Hello Vercel!</h1>
-            <h2 className='text-4xl font-bold font-title text-vault-genre'>Welcome To The Future Home Of .....</h2>
-            <h3 className='text-8xl font-bold font-title text-vault-title'>The Vinyl Vault Library</h3>
-            
-            
+        <h2 className='text-6xl font-bold font-title text-vault-title'>The Vinyl Vault Library</h2>
+        <h3 className='text-4xl font-bold font-title text-vault-genre'>Recent Releases</h3>
+        
+            <div className="grid gap-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mr-4">
+                {localRecentReleases.map(release => (
+                    <ReleaseGridItems
+                    key={release.releaseSlug}
+                    {...release}
+                    />
+                ))}
+            </div>
         </div>
-
     )
 }

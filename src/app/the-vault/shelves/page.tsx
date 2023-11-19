@@ -1,10 +1,9 @@
 // "use client"
 import { fetchShelves, importShelves } from "@/app/api/localConnect"
 import Link from "next/link"
-import { Button } from "@/components/Button"
 export default async function TheVaultShelvesList() {
 
-    await importShelves()
+    // await importShelves()
     let shelves = undefined
     shelves = await fetchShelves()
 
