@@ -27,7 +27,7 @@ import {
   }
   
   export function SidebarProvider({ children }: SidebarProviderProps) {
-    const [isLargeOpen, setIsLargeOpen] = useState(false)
+    const [isLargeOpen, setIsLargeOpen] = useState(true)
     const [isSmallOpen, setIsSmallOpen] = useState(false)
   
     useEffect(() => {
@@ -49,12 +49,8 @@ import {
     function toggleSidebar() {
       if (isScreenSmall()) {
         setIsSmallOpen(s => !s)
-        console.log(isLargeOpen)
-        console.log(isSmallOpen)
       } else {
         setIsLargeOpen(l => !l)
-        console.log(isLargeOpen)
-        console.log(isSmallOpen)
       }
     }
   

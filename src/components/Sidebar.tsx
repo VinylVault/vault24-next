@@ -7,6 +7,11 @@ import { Tooltip } from "@geist-ui/core"
 import { useSidebarContext } from "@/app/contexts/SidebarContext"
 import { PageHeaderFirstSection } from "./PageHeader"
 
+// TODO ON AIR / SCHEDULE TO BE `IF` STATEMENTED - IF ON AIR NO SCHEDULE VICEVERSA
+// TODO FIND FINAL ( FULL COLOUR ) IMAGES
+// TODO GET TOOLTIP WORKING
+// TODO ? MOVE MENU ITEMS TO DATABASE
+
 export function Sidebar() {
     const { isLargeOpen, isSmallOpen, closeSidebar } = useSidebarContext()
     return (

@@ -9,7 +9,7 @@ export default function TheVaultShelfDetails() {
             <h1 className='text-6xl font-bold font-title text-vault-text'>Hello Vercel!</h1>
             <h2 className='text-4xl font-bold font-title text-vault-genre'>Welcome To The Future Home Of .....</h2>
             <h3 className='text-8xl font-bold font-title text-vault-title'>The Vinyl Vault <span className='text-vault-style capitalize'>{params.shelfSlug}</span> Shelf Details Page</h3>
-            <Link href={'/library/shelves'}>Back To Shelf Listing</Link>
+            <Link href={'/the-vault/shelves'}>Back To Shelf Listing</Link>
         </div>
     )
 }
