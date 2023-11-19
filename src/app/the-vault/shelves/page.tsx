@@ -1,10 +1,12 @@
 // "use client"
-import { fetchShelves } from "@/app/api/localConnect"
+import { fetchShelves, importShelves } from "@/app/api/localConnect"
 import Link from "next/link"
+import { Button } from "@/components/Button"
 export default async function TheVaultShelvesList() {
 
-    let shelves = await fetchShelves()
-    console.log (shelves)
+    await importShelves()
+    let shelves = undefined
+    shelves = await fetchShelves()
 
     return (
         <div className="flex min-h-screen flex-col items-center p-24 bg-vault-background">
