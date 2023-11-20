@@ -36,7 +36,10 @@ export default async function main() {
         }
         if (oneDiscogsRelease.basic_information.formats){
             for (let releaseFormat of oneDiscogsRelease.basic_information.formats) {
-                await writeFormats(releaseFormat, 'library')
+                for (let formatDescriptor of releaseFormat?.descriptions) {
+                    console.log(formatDescriptor)
+                    await writeFormats(formatDescriptor, 'library')
+                }
             }
         }
         // let discogsReleaseDetail = await getReleaseDetails(oneDiscogsRelease.id.toString())

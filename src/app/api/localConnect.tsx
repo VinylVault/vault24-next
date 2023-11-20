@@ -176,7 +176,7 @@ export const writeGenres = async (genre:string, whichList:string) => {
             }).then(res => res.json())
         // console.log(genreData)
     } else {
-        console.log("Exists")
+        console.log("Genre Exists")
     }
 }
 
@@ -192,10 +192,12 @@ export const writeFormats = async (format:string, whichList:string) => {
         wantlist = 'true'
     }
 
+    console.log("Format: " + format)
+    console.log("Format Type: " + typeof(format))
     let formatSlug = await generateSlugs(format)
-    
+    console.log(formatSlug)
     existingFormatSlugs = await formatSlugs()
-    // console.log(existingFormatSlugs)
+    console.log(existingFormatSlugs)
     
     if (!existingFormatSlugs.includes(formatSlug) && !process.env.IGNORE_FORMATS?.includes(formatSlug)) {
         let formatData = new FormData()
@@ -209,7 +211,7 @@ export const writeFormats = async (format:string, whichList:string) => {
             }).then(res => res.json())
         console.log(formatData)
     } else {
-        console.log("Exists")
+        console.log("FormatExists")
     }
 }
 
@@ -229,9 +231,9 @@ export async function writeStyles(style:string, whichList:string) {
     let styleSlug = await generateSlugs(style)
     
     existingGenreSlugs = await genreSlugs()
-    console.log(existingGenreSlugs)
+    // console.log(existingGenreSlugs)
     existingStyleSlugs = await styleSlugs()
-    console.log(existingStyleSlugs)
+    // console.log(existingStyleSlugs)
     
     if (!existingStyleSlugs.includes(styleSlug)) {
         let styleData = new FormData()
@@ -245,6 +247,6 @@ export async function writeStyles(style:string, whichList:string) {
             }).then(res => res.json())
         // console.log(styleData)
     } else {
-        console.log("Exists")
+        console.log("Style Exists")
     }
 }
