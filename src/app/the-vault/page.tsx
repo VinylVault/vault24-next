@@ -10,7 +10,7 @@ export default async function TheVault() {
 
     return (
 
-        <div className="flex min-h-screen flex-col items-center p-24 bg-vault-background">
+        <div className="flex flex-col items-center px-24 bg-vault-background">
         <h2 className='text-6xl font-bold font-title text-vault-title'>The Vinyl Vault Library</h2>
         <h3 className='text-4xl font-bold font-title text-vault-genre'>Recent Releases</h3>
         
