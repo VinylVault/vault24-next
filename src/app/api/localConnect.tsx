@@ -303,7 +303,7 @@ export const writeArtists = async (artist:object, whichList:string) => {
 
 }
 
-export const writeRelease = async (release:any, folder:string, date_added:string, whichList:string, genres:Array<string | number>, styles:Array<string | number>, formats:Array<string | number>) => {
+export const writeRelease = async (release:any, folder:string, date_added:string, whichList:string, genres:any, styles:any, formats:any) => {
     let library = 'false'
     let wantlist = 'false'
     let ordered = 'false'
