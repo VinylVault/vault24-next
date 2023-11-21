@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { discogsShelves, getReleaseDetails, getReleases } from "../../api/discogsConnect";
-import { importShelves, writeFormats, writeGenres, writeStyles } from "../../api/localConnect";
+import { importShelves, writeFormats, writeGenres, writeRelease, writeStyles } from "../../api/localConnect";
 
 const download = require('image-downloader')
 
@@ -23,27 +23,56 @@ export default async function main() {
     }
 
     for (let oneDiscogsRelease of fullDiscogsReleaseList) {
+        let releaseGenreArray = new Array
+        let releaseStyleArray = new Array
+        var releaseFormatArray = new Array
+        let releaseSlug = null
+
+        let releaseTitle = oneDiscogsRelease.basic_information.title
+        let releaseId = oneDiscogsRelease.id
+
         // console.log(oneDiscogsRelease)
+
         if (oneDiscogsRelease.basic_information.genres){
             for (let releaseGenre of oneDiscogsRelease.basic_information.genres) {
-                await writeGenres(releaseGenre, 'library')
+                let releaseGenreSlug = await writeGenres(releaseGenre, 'library')
+                releaseGenreArray.push(releaseGenreSlug)
             }
         }
+
         if (oneDiscogsRelease.basic_information.styles){
             for (let releaseStyle of oneDiscogsRelease.basic_information.styles) {
-                await writeStyles(releaseStyle, 'library')
+                let releaseStyleSlug = await writeStyles(releaseStyle, 'library')
+                releaseStyleArray.push(releaseStyleSlug)
             }
         }
+
         if (oneDiscogsRelease.basic_information.formats){
             for (let releaseFormat of oneDiscogsRelease.basic_information.formats) {
-                for (let formatDescriptor of releaseFormat?.descriptions) {
-                    console.log(formatDescriptor)
-                    await writeFormats(formatDescriptor, 'library')
+                // console.log(releaseFormat)
+                let releaseFormatSlug = await writeFormats(releaseFormat.name, 'library')
+                releaseFormatArray.push(releaseFormatSlug)
+                if (releaseFormat.descriptions){
+                    for (let formatDescriptor of releaseFormat.descriptions) {
+                        // console.log(formatDescriptor)
+                        let formatDescriptorSlug = await writeFormats(formatDescriptor, 'library')
+                        releaseFormatArray.push(formatDescriptorSlug)
+                    }
                 }
             }
         }
-        // let discogsReleaseDetail = await getReleaseDetails(oneDiscogsRelease.id.toString())
+
+        //TODO ARTISTS
+
+        //TODO RECORD LABELS
+
+        //TODO RELEASE DETAILS
+
+        let discogsReleaseDetail = await getReleaseDetails(oneDiscogsRelease.id.toString())
         // console.log(discogsReleaseDetail)
+        releaseSlug = await writeRelease(discogsReleaseDetail.data, oneDiscogsRelease.folder_id, oneDiscogsRelease.date_added, 'library', releaseGenreArray, releaseStyleArray, releaseFormatArray)
+
+        //TODO ADD TRACKS
         
     }
     return (

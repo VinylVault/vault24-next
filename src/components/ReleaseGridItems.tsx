@@ -24,11 +24,11 @@ export function ReleaseGridItems({
 }: ReleaseGridItemsProps) {
     return(
         <>
-        <div className="flex flex-col gap-2 w-full">
-            <a href={`/the-vault/releases/${releaseSlug}`} className="aspect-square w-full rounded-xl overflow-hidden">
+        <div className="flex flex-col gap-2 w-full shadow-lg shadow-vault-menubar hover:shadow-vault-link rounded-xl">
+            <a href={`/the-vault/releases/${releaseSlug}`} className="aspect-square w-full rounded-xl overflow-hidden ">
                 <Image 
                 src={releaseLocalImage}
-                className="text-vault-link block col-span-4  object-fill rounded-xl grayscale hover:grayscale-0 transition duration-500 ease-in-out"
+                className="text-vault-link block col-span-3 object-fill rounded-xl grayscale hover:grayscale-0 transition duration-500 ease-in-out"
                 alt={releaseTitle}
                 width={1000} // 100%
                 height={1000} // 100%
@@ -36,9 +36,9 @@ export function ReleaseGridItems({
                 />
             </a>
             <div className="flex flex-col">
-                <p className="text-vault-text font-bold text-lg">{releaseTitle}</p>
-                <p className="text-vault-text font-title text-lg">{releaseArtists.map(artist => artist.artistName).join(", ")}</p>
-                <p className="text-vault-text font-vault-title font-title text-lg">Added: {formatTimeAgo(releaseAddedToDiscogs)}</p>
+                <p className="text-vault-text mx-2 mb-1 font-bold text-lg">{releaseTitle}</p>
+                <p className="text-vault-text mx-2 mb-1 font-title text-lg">{releaseArtists.map(artist => artist.artistName).join(", ")}</p>
+                <p className="text-vault-text mx-2 mb-2 font-vault-title font-title text-lg">Added: {formatTimeAgo(releaseAddedToDiscogs)}</p>
             </div>
                     
         </div>

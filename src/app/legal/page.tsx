@@ -1,10 +1,7 @@
-import { styleSlugs } from "../api/localConnect"
+import { fetchGenres } from "../api/localConnect"
 
 export default async function Legal() {
-
-    let getGenreSlugs = await styleSlugs()
-    console.log(getGenreSlugs)
-        
+            
     return (
         <div className="flex min-h-screen flex-col items-center p-24 bg-vault-background">
             <h1 className='text-6xl font-bold font-title text-vault-text'>Hello Vercel!</h1>

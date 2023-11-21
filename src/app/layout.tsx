@@ -15,13 +15,13 @@ import { SidebarProvider } from './contexts/SidebarContext'
 //   title: 'The Vinyl Vault Show',
 //   description: 'The Vinyl Vault Show website. Search our library and make requests. Read our blog ... And more.',
 // }
-
+  
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  const [selectedGenre, setSelectedGenre] = useState(genres[0])
+  const [selectedGenre, setSelectedGenre] = useState(genres)
   return (
     <html lang="en">
       <body className="bg-vault-background">
