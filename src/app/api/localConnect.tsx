@@ -326,7 +326,13 @@ export const writeRelease = async (release:any, folder:string, date_added:string
 
     let releaseDecade = await calculateReleaseDecade(release.year.toString())
 
-    let releaseSlug = await generateSlugs(releaseTitleFixed[0] + " " + release.id)
+    let releaseSlug = "null"
+
+    if (releaseTitleFixed){
+        releaseSlug = await generateSlugs(releaseTitleFixed[0] + " " + release.id)
+    } else {
+        releaseSlug = "fix-me"
+    }
 
     let isReleaseNew = await calcualteDate(date_added, release.released)
 
@@ -340,9 +346,11 @@ export const writeRelease = async (release:any, folder:string, date_added:string
         .then(blob => {
             releaseData.append('releaseLocalImage', blob, releaseSlug + ".jpg");
         })
-    releaseData.append('releaseDiscogsImageUrl',release.images[0].resource_url)
+    releaseData.append('releaseDiscogsImageUrl',release.images[0].resource_url || '#')
+    if (releaseTitleFixed){
     releaseData.append('releaseSortLetter', releaseTitleFixed[1])
     releaseData.append('releaseSortName', releaseTitleFixed[0])
+    }
     releaseData.append('releaseCatalogueNumber',release.labels[0].catno)
     releaseData.append('releaseYear',release.year)
     releaseData.append('releaseDecade50s',releaseDecade[0])
