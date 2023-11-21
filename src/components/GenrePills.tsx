@@ -1,9 +1,9 @@
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "../components/Button"
-import { useEffect, useRef, useState } from "react"
+import { JSXElementConstructor, Key, PromiseLikeOfReactNode, ReactElement, ReactNode, useEffect, useRef, useState } from "react"
 
 type GenrePillProps = {
-    genres: any
+    genres: string[]
     selectedGenre: any
     onSelect: (genre: any) => void
 }
@@ -36,7 +36,7 @@ export function GenrePills({ genres, selectedGenre, onSelect }: GenrePillProps) 
     return (
         <div ref={containerRef} className="overflow-x-hidden relative bg-vault-background">
             <div className="flex bg-vault-background mb-4 whitespace-nowrap gap-3 transition-transform w-[max-content]" style={{ transform: `translateX(-${translate}px)` }}>
-                {genres.map(genre => (
+                {genres.map((genre) => (
                     <Button 
                     key={genre}
                     onClick={() => onSelect(genre)}
