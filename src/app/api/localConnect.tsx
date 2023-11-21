@@ -4,7 +4,7 @@ import { discogsShelves } from './discogsConnect'
 
 export const fetchShelves = async () => {
     const libraryShelfData = new Array
-    const data = await fetch("http://192.168.0.10:7000/library_api/shelves/",{ cache: 'no-store' }).then(res => res.json())
+    const data = await fetch("http://api.thevinylvaultshow.co.uk:7000/library_api/shelves/",{ cache: 'no-store' }).then(res => res.json())
     for (let libraryData of data) {
         if (libraryData.shelfLibrary == true && !libraryData.shelfIgnore == true && !libraryData.shelfWantlist == true) {
                 libraryShelfData.push(libraryData)  
@@ -15,7 +15,7 @@ export const fetchShelves = async () => {
 
 export const fetchArtists = async () => {
     const libraryArtistsData = new Array
-    const data = await fetch("http://192.168.0.10:7000/library_api/artists/",{ cache: 'no-store' }).then(res => res.json())
+    const data = await fetch("http://api.thevinylvaultshow.co.uk:7000/library_api/artists/",{ cache: 'no-store' }).then(res => res.json())
     for (let libraryData of data) {
         if (libraryData.artistLibrary == true) {
                 libraryArtistsData.push(libraryData)  
@@ -26,7 +26,7 @@ export const fetchArtists = async () => {
 
 export const artistSlugs = async () => {
     const libraryArtistSlugData = new Array
-    const data = await fetch("http://192.168.0.10:7000/library_api/artists/",{ cache: 'no-store' }).then(res => res.json())
+    const data = await fetch("http://api.thevinylvaultshow.co.uk:7000/library_api/artists/",{ cache: 'no-store' }).then(res => res.json())
     // console.log(data)
     for (let libraryData of data) {
         // console.log(libraryData)
@@ -38,7 +38,7 @@ export const artistSlugs = async () => {
 
 export const fetchGenres = async () => {
     const libraryGenreData = new Array
-    const data = await fetch("http://192.168.0.10:7000/library_api/genres/").then(res => res.json())
+    const data = await fetch("http://api.thevinylvaultshow.co.uk:7000/library_api/genres/").then(res => res.json())
     for (let libraryData of data) {
         if (libraryData.genreLibrary == true && !libraryData.genreWantlist == true) {
                 libraryGenreData.push(libraryData)  
@@ -49,7 +49,7 @@ export const fetchGenres = async () => {
 
 export const genreSlugs = async () => {
     const libraryGenreSlugData = new Array
-    const data = await fetch("http://192.168.0.10:7000/library_api/genres/",{ cache: 'no-store' }).then(res => res.json())
+    const data = await fetch("http://api.thevinylvaultshow.co.uk:7000/library_api/genres/",{ cache: 'no-store' }).then(res => res.json())
     // console.log(data)
     for (let libraryData of data) {
         // console.log(libraryData)
@@ -61,7 +61,7 @@ export const genreSlugs = async () => {
 
 export const fetchStyles = async () => {
     const libraryStyleData = new Array
-    const data = await fetch("http://192.168.0.10:7000/library_api/styles/").then(res => res.json())
+    const data = await fetch("http://api.thevinylvaultshow.co.uk:7000/library_api/styles/").then(res => res.json())
     // console.log(data)
     for (let libraryData of data) {
         // console.log(libraryData)
@@ -75,7 +75,7 @@ export const fetchStyles = async () => {
 
 export const styleSlugs = async () => {
     const libraryStyleSlugData = new Array
-    const data = await fetch("http://192.168.0.10:7000/library_api/styles/",{ cache: 'no-store' }).then(res => res.json())
+    const data = await fetch("http://api.thevinylvaultshow.co.uk:7000/library_api/styles/",{ cache: 'no-store' }).then(res => res.json())
     // console.log(data)
     for (let libraryData of data) {
         // console.log(libraryData)
@@ -87,7 +87,7 @@ export const styleSlugs = async () => {
 
 export const fetchFormats = async () => {
     const libraryFormatData = new Array
-    const data = await fetch("http://192.168.0.10:7000/library_api/formats/",{ cache: 'no-store' }).then(res => res.json())
+    const data = await fetch("http://api.thevinylvaultshow.co.uk:7000/library_api/formats/",{ cache: 'no-store' }).then(res => res.json())
     // console.log(data)
     for (let libraryData of data) {
         // console.log(libraryData)
@@ -101,7 +101,7 @@ export const fetchFormats = async () => {
 
 export const formatSlugs = async () => {
     const libraryFormatSlugData = new Array
-    const data = await fetch("http://192.168.0.10:7000/library_api/formats/",{ cache: 'no-store' }).then(res => res.json())
+    const data = await fetch("http://api.thevinylvaultshow.co.uk:7000/library_api/formats/",{ cache: 'no-store' }).then(res => res.json())
     // console.log(data)
     for (let libraryData of data) {
         // console.log(libraryData)
@@ -146,7 +146,7 @@ export const importShelves = async () => {
                     shelfToAdd.append('shelfLibrary',shelfLibrary)
                     shelfToAdd.append('shelfWantlist',shelfWantlist)
                     shelfToAdd.append('shelfIgnore',shelfIgnore)
-                    await fetch(`http://192.168.0.10:7000/library_api/addshelf/`, {
+                    await fetch(`http://api.thevinylvaultshow.co.uk:7000/library_api/addshelf/`, {
                         method: 'POST',
                         body: shelfToAdd
                     })
@@ -158,7 +158,7 @@ export const importShelves = async () => {
 
 export const recentReleases = async () => {
     const libraryReleaseData = new Array
-    const data = await fetch("http://192.168.0.10:7000/library_api/recentreleases/",{ cache: 'no-store' }).then(res => res.json())
+    const data = await fetch("http://api.thevinylvaultshow.co.uk:7000/library_api/recentreleases/",{ cache: 'no-store' }).then(res => res.json())
     for (let releaseData of data) {
         if (releaseData.releaseLibrary == true && releaseData.releaseUnavailable == false && !releaseData.releaseOrdered == true && releaseData.releaseIsNewAddition == true) {
             libraryReleaseData.push(releaseData)
@@ -194,7 +194,7 @@ export const writeGenres = async (genre:string, whichList:string) => {
             genreData.append('genreLibrary',library)
             genreData.append('genreWantlist',wantlist)
             genreData.append('genreSlug',genreSlug)
-            let response = await fetch(`http://192.168.0.10:7000/library_api/addgenre/`, {
+            let response = await fetch(`http://api.thevinylvaultshow.co.uk:7000/library_api/addgenre/`, {
                 method: 'POST',
                 body: genreData
             }).then(res => res.json())
@@ -233,7 +233,7 @@ export const writeFormats = async (format:string, whichList:string) => {
             formatData.append('formatLibrary',library)
             formatData.append('formatWantlist',wantlist)
             formatData.append('formatSlug',formatSlug)
-            let response = await fetch(`http://192.168.0.10:7000/library_api/addformat/`, {
+            let response = await fetch(`http://api.thevinylvaultshow.co.uk:7000/library_api/addformat/`, {
                 method: 'POST',
                 body: formatData
             }).then(res => res.json())
@@ -273,7 +273,7 @@ export async function writeStyles(style:string, whichList:string) {
             styleData.append('styleLibrary',library)
             styleData.append('styleWantlist',wantlist)
             styleData.append('styleSlug',styleSlug)
-            let response = await fetch(`http://192.168.0.10:7000/library_api/addstyle/`, {
+            let response = await fetch(`http://api.thevinylvaultshow.co.uk:7000/library_api/addstyle/`, {
                 method: 'POST',
                 body: styleData
             }).then(res => res.json())
@@ -362,7 +362,7 @@ export const writeRelease = async (release:any, folder:string, date_added:string
     releaseData.append('releaseWantlist',wantlist)
     releaseData.append('releaseSlug',releaseSlug)
 
-    let response = await fetch(`http://192.168.0.10:7000/library_api/addrelease/`, {
+    let response = await fetch(`http://api.thevinylvaultshow.co.uk:7000/library_api/addrelease/`, {
         method: 'POST',
         body: releaseData
     }).then(res => res.json())
@@ -380,7 +380,7 @@ export const writeRelease = async (release:any, folder:string, date_added:string
         // console.log(genre)
         // console.log(releaseGenreLink)
 
-        let releaseGenreResponse = await fetch(`http://192.168.0.10:7000/library_api/link/releases/genres/`, {
+        let releaseGenreResponse = await fetch(`http://api.thevinylvaultshow.co.uk:7000/library_api/link/releases/genres/`, {
             method: 'POST',
             body: releaseGenreLink
         }).then(res => res.json())
@@ -396,7 +396,7 @@ export const writeRelease = async (release:any, folder:string, date_added:string
         // console.log(style)
         // console.log(releaseStyleLink)
 
-        let releaseStyleResponse = await fetch(`http://192.168.0.10:7000/library_api/link/releases/styles/`, {
+        let releaseStyleResponse = await fetch(`http://api.thevinylvaultshow.co.uk:7000/library_api/link/releases/styles/`, {
             method: 'POST',
             body: releaseStyleLink
         }).then(res => res.json())
@@ -413,7 +413,7 @@ export const writeRelease = async (release:any, folder:string, date_added:string
             // console.log(format)
             // console.log(releaseFormatLink)
 
-            let releaseFormatResponse = await fetch(`http://192.168.0.10:7000/library_api/link/releases/formats/`, {
+            let releaseFormatResponse = await fetch(`http://api.thevinylvaultshow.co.uk:7000/library_api/link/releases/formats/`, {
                 method: 'POST',
                 body: releaseFormatLink
             }).then(res => res.json())

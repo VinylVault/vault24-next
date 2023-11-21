@@ -10,6 +10,12 @@ const nextConfig = {
             port: '7000',
             pathname: '/media/**',
         },
+        {
+            protocol: 'http',
+            hostname: 'api.thevinylvaultshow.co.uk',
+            port: '7000',
+            pathname: '/media/**',
+        },
         ],
     },
 }
