@@ -3,9 +3,9 @@ import { Button } from "../components/Button"
 import { useEffect, useRef, useState } from "react"
 
 type GenrePillProps = {
-    genres: string[]
-    selectedGenre: string
-    onSelect: (genre: string) => void
+    genres: any
+    selectedGenre: any
+    onSelect: (genre: any) => void
 }
 const TRANSLATE_AMOUNT = 200
 
