@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { formatTimeAgo } from "@/utils/formatTimeAgo"
 
-type ReleaseGridItemsProps = {
+type ReleaseDetailsProps = {
     releaseTitle: string
     releaseArtists: ReleaseArtistProps[]
     releaseYear: string
@@ -16,16 +16,15 @@ type ReleaseArtistProps = {
     artistName: string
     artistSlug: string
 }
-export function ReleaseGridItems({
+export function ReleaseDetails({
     releaseTitle,
     releaseArtists,
     releaseLocalImage,
     releaseSlug,
     releaseAddedToDiscogs,
     releaseIsNew
-}: ReleaseGridItemsProps) {
+}: ReleaseDetailsProps) {
     return(
-        <>
         <div className="flex flex-col gap-2 shadow-lg shadow-vault-menubar hover:shadow-vault-link transition duration-500 rounded-xl">
             <a href={`/the-vault/releases/${releaseSlug}`} className="relative aspect-square w-full rounded-xl overflow-hidden ">
                 <Image 
@@ -48,6 +47,5 @@ export function ReleaseGridItems({
             </div>
                     
         </div>
-        </>
     )
 }
