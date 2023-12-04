@@ -15,7 +15,6 @@
     "fs-extra": "^11.2.0",
     "gray-matter": "^4.0.3",
     "image-downloader": "^4.3.0",
-    "js_ts_discogs_api_v2_library": "^0.0.3",
     "lucide-react": "^0.292.0",
     "marked": "^11.0.0",
     "next": "14.0.3",
