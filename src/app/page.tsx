@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { HomePageGridItems } from "@/components/HomePageGridItems"
-import { homepageItems} from "./data/homepage"
+import { homepageItems} from "@/data/homepage"
 
 export default function Home() {
   return (

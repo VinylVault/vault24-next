@@ -26,7 +26,7 @@ import { Children, ElementType, ReactNode, useState } from 'react';
 import { Button, buttonStyles } from './Button';
 import { twMerge } from 'tailwind-merge';
 import { Tooltip } from '@geist-ui/core';
-import { useSidebarContext } from '@/app/contexts/SidebarContext';
+import { useSidebarContext } from '@/contexts/SidebarContext';
 import { PageHeaderFirstSection } from './PageHeader';
 
 // TODO ON AIR / SCHEDULE TO BE `IF` STATEMENTED - IF ON AIR NO SCHEDULE VICEVERSA

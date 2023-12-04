@@ -1,7 +1,7 @@
 import { ArrowLeft, Bell, Menu, Search, User } from "lucide-react"
-import { Button } from "../components/Button"
+import { Button } from "@/components/Button"
 import { useState } from "react"
-import { useSidebarContext } from "@/app/contexts/SidebarContext"
+import { useSidebarContext } from "@/contexts/SidebarContext"
 // import { Link } from "react-router-dom"
 
 export function PageHeader() {
