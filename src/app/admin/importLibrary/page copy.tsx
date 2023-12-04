@@ -7,7 +7,7 @@ import { generateSlugs } from "@/app/api/utilities";
 const download = require('image-downloader')
 
 let path = require('path');
-let fs = require('fs');
+let fs = require('fs-extra');
 
 export default async function main() {
 
