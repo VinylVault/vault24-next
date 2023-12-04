@@ -26,7 +26,7 @@ export function ReleaseDetails({
 }: ReleaseDetailsProps) {
     return(
         <div className="flex flex-col gap-2 shadow-lg shadow-vault-menubar hover:shadow-vault-link transition duration-500 rounded-xl">
-            <a href={`/the-vault/releases/${releaseSlug}`} className="relative aspect-square w-full rounded-xl overflow-hidden ">
+            <a href={`/the_vault/releases/${releaseSlug}`} className="relative aspect-square w-full rounded-xl overflow-hidden ">
                 <Image 
                 src={releaseLocalImage}
                 className="block text-vault-link col-span-3 object-fill rounded-xl grayscale hover:grayscale-0 transition duration-500 ease-in-out"

@@ -1,0 +1,425 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model activityLog {
+  activityLogId        String                 @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  activityLogMessage   String                 @db.VarChar(2048)
+  activityCompleted    Boolean                @default(false)
+  createdAt            DateTime               @default(now()) @db.Timestamptz(6)
+  updatedAt            DateTime               @default(now()) @db.Timestamptz(6)
+  activityLogEntryType activityLogEntryType[]
+}
+
+model activityLogEntryType {
+  activityLogEntryTypeName String        @id @unique @db.VarChar(64)
+  createdAt                DateTime      @default(now()) @db.Timestamptz(6)
+  updatedAt                DateTime      @default(now()) @db.Timestamptz(6)
+  activityLog              activityLog[]
+}
+
+model availableShows {
+  availableShowsName     String        @db.VarChar(512)
+  availableShowsImage    String        @db.VarChar(1024)
+  availableShowsAbout    String?       @db.VarChar(2048)
+  availableShowsDuration Int
+  availableShowsActive   Boolean?      @default(false)
+  availableShowsSlug     String        @id @db.VarChar(256)
+  createdAt              DateTime      @default(now()) @db.Timestamptz(6)
+  updatedAt              DateTime      @default(now()) @db.Timestamptz(6)
+  bookedShows            bookedShows[]
+  showTypes              showTypes[]
+}
+
+model blogCollectionItems {
+  blogCollectionItemsId String            @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  collectionReason      String            @db.VarChar(4096)
+  createdAt             DateTime          @default(now()) @db.Timestamptz(6)
+  updatedAt             DateTime          @default(now()) @db.Timestamptz(6)
+  blogPost              blogPost[]
+  libraryReleases       libraryReleases[]
+}
+
+model blogPAPlaylistItems {
+  paPlaylistItemsId String            @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  paPlaylistReason  String?           @db.VarChar(4096)
+  paBoxSet          Boolean           @default(false)
+  paAlbum           Boolean           @default(false)
+  paSingle          Boolean           @default(false)
+  paBook            Boolean           @default(false)
+  paBookTitle       String?           @db.VarChar(512)
+  paBookAuthor      String?           @db.VarChar(512)
+  paBookImageURL    String?           @db.VarChar(1024)
+  createdAt         DateTime          @default(now()) @db.Timestamptz(6)
+  updatedAt         DateTime          @default(now()) @db.Timestamptz(6)
+  blogPost          blogPost[]
+  libraryReleases   libraryReleases[]
+}
+
+model blogPlaylist {
+  blogPlaylistTitle       String            @db.VarChar(128)
+  blogPlaylistIntro       String            @db.VarChar(1024)
+  blogPlaylistImage       String?           @db.VarChar(1024)
+  blogPlayListSMImage     String?           @db.VarChar(1024)
+  blogPlayListListenAgain String?           @db.VarChar(512)
+  viewCounter             Int               @default(0)
+  blogPlaylistSlug        String            @id @db.VarChar(160)
+  blogPlaylistPublishDate DateTime          @default(now()) @db.Timestamptz(6)
+  blogPlaylistPublished   Boolean           @default(true)
+  blogPlaylistCurrent     Boolean           @default(false)
+  createdAt               DateTime          @default(now()) @db.Timestamptz(6)
+  updatedAt               DateTime          @default(now()) @db.Timestamptz(6)
+  blogPost                blogPost[]
+  bookedShows             bookedShows[]
+  globalTags              globalTags[]
+  trackOnPlaylist         trackOnPlaylist[]
+  userAccounts            userAccounts[]
+}
+
+model blogPost {
+  blogPostTitle       String                @db.VarChar(128)
+  blogPostIntro       String                @db.VarChar(1024)
+  blogPostImage       String?               @db.VarChar(1024)
+  blogPostSMImage     String?               @db.VarChar(1024)
+  blogPostContent     String?               @db.VarChar(20480)
+  viewCounter         Int                   @default(0)
+  blogPostSlug        String                @id @unique @db.VarChar(160)
+  blogPostPublishDate DateTime              @default(now()) @db.Timestamptz(6)
+  blogPostPublished   Boolean               @default(true)
+  createdAt           DateTime              @default(now()) @db.Timestamptz(6)
+  updatedAt           DateTime              @default(now()) @db.Timestamptz(6)
+  blogCollectionItems blogCollectionItems[]
+  blogPAPlaylistItems blogPAPlaylistItems[]
+  blogPlaylist        blogPlaylist[]
+  blogPostType        blogPostType[]
+  globalTags          globalTags[]
+  libraryReleases     libraryReleases[]
+  userAccounts        userAccounts[]
+}
+
+model blogPostType {
+  postTypes     String     @id @unique @db.VarChar(512)
+  isBlogPost    Boolean    @default(false)
+  isPlaylist    Boolean    @default(false)
+  postTypesSlug String     @unique @db.VarChar(512)
+  createdAt     DateTime   @default(now()) @db.Timestamptz(6)
+  updatedAt     DateTime   @default(now()) @db.Timestamptz(6)
+  blogPost      blogPost[]
+}
+
+model bookedShows {
+  bookedShowsFirst    DateTime?             @default(now()) @db.Timestamptz(6)
+  bookedShowsLast     DateTime?             @default(now()) @db.Timestamptz(6)
+  bookedShowsWeek1    Boolean?              @default(false)
+  bookedShowsWeek2    Boolean?              @default(false)
+  bookedShowsWeek3    Boolean?              @default(false)
+  bookedShowsWeek4    Boolean?              @default(false)
+  bookedShowsWeek5    Boolean?              @default(false)
+  bookedShowsActive   Boolean?              @default(false)
+  bookedShowsSlug     String                @id @db.VarChar(256)
+  createdAt           DateTime              @default(now()) @db.Timestamptz(6)
+  updatedAt           DateTime              @default(now()) @db.Timestamptz(6)
+  availableShows      availableShows[]
+  blogPlaylist        blogPlaylist[]
+  radioStationDetails radioStationDetails[]
+  showTypes           showTypes[]
+}
+
+model globalTags {
+  tagSlug      String         @id @unique @db.VarChar(512)
+  createdAt    DateTime       @default(now()) @db.Timestamptz(6)
+  updatedAt    DateTime       @default(now()) @db.Timestamptz(6)
+  blogPlaylist blogPlaylist[]
+  blogPost     blogPost[]
+}
+
+model libraryArtists {
+  artistId              String            @unique @db.VarChar(256)
+  artistName            String            @db.VarChar(512)
+  artistDiscogsPage     String            @default("#") @db.VarChar(1024)
+  artistSortLetter      String            @default("-") @db.VarChar(1)
+  artistSortName        String            @default("-") @db.VarChar(256)
+  artistReleaseQuantity Int               @default(0)
+  artistTrackQuantity   Int               @default(0)
+  artistSlug            String            @id @unique @db.VarChar(300)
+  artistLibrary         Boolean           @default(false)
+  artistWantlist        Boolean           @default(false)
+  createdAt             DateTime          @default(now()) @db.Timestamptz(6)
+  updatedAt             DateTime          @default(now()) @db.Timestamptz(6)
+  libraryReleases       libraryReleases[]
+  libraryTracks         libraryTracks[]
+}
+
+model libraryFormats {
+  format          String            @unique @db.VarChar(256)
+  formatCount     Int               @default(0)
+  formatLibrary   Boolean           @default(false)
+  formatWantlist  Boolean           @default(false)
+  formatSlug      String            @id @unique @db.VarChar(256)
+  createdAt       DateTime          @default(now()) @db.Timestamptz(6)
+  updatedAt       DateTime          @default(now()) @db.Timestamptz(6)
+  libraryReleases libraryReleases[]
+}
+
+model libraryGenres {
+  genre               String            @unique @db.VarChar(256)
+  genreCount          Int               @default(0)
+  genreLibrary        Boolean           @default(false)
+  genreWantlist       Boolean           @default(false)
+  genreHasNewReleases Boolean           @default(false)
+  genreSlug           String            @id @unique @db.VarChar(256)
+  createdAt           DateTime          @default(now()) @db.Timestamptz(6)
+  updatedAt           DateTime          @default(now()) @db.Timestamptz(6)
+  libraryReleases     libraryReleases[]
+}
+
+model libraryLocations {
+  locationId                      String            @unique @db.VarChar(256)
+  location                        String            @db.VarChar(256)
+  locationCount                   Int               @default(0)
+  locationSlug                    String            @id @unique @db.VarChar(300)
+  createdAt                       DateTime          @default(now()) @db.Timestamptz(6)
+  updatedAt                       DateTime          @default(now()) @db.Timestamptz(6)
+  libraryReleases_currentLocation libraryReleases[] @relation("currentLocation")
+  libraryReleases_libraryLocation libraryReleases[] @relation("libraryLocation")
+}
+
+model libraryRecordLabels {
+  recordlabelId              String            @unique @db.VarChar(256)
+  recordlabelName            String            @db.VarChar(512)
+  recordlabelDiscogsPage     String            @default("#") @db.VarChar(1024)
+  recordlabelSortLetter      String            @default("-") @db.VarChar(1)
+  recordlabelSortName        String            @default("-") @db.VarChar(256)
+  recordlabelImageUrl        String            @default("#") @db.VarChar(1024)
+  recordlabelReleaseQuantity Int               @default(0)
+  recordlabelTrackQuantity   Int               @default(0)
+  recordlabelSlug            String            @id @unique @db.VarChar(300)
+  recordlabelLibrary         Boolean           @default(false)
+  recordlabelWantlist        Boolean           @default(false)
+  createdAt                  DateTime          @default(now()) @db.Timestamptz(6)
+  updatedAt                  DateTime          @default(now()) @db.Timestamptz(6)
+  libraryReleases            libraryReleases[]
+}
+
+model libraryReleases {
+  releaseId                        String                      @unique @db.VarChar(256)
+  releaseMasterId                  String                      @db.VarChar(256)
+  releaseDiscogsPage               String                      @default("#") @db.VarChar(1024)
+  releaseTitle                     String                      @db.VarChar(512)
+  releaseLocalImage                String                      @db.VarChar(1024)
+  releaseDiscogsImageUrl           String                      @default("#") @db.VarChar(1024)
+  releaseSortLetter                String                      @default("-") @db.VarChar(1)
+  releaseSortName                  String                      @default("-") @db.VarChar(512)
+  releaseCatalogueNumber           String                      @default("-") @db.VarChar(512)
+  releaseTrackCount                Int                         @default(0)
+  releaseYear                      Int                         @default(0)
+  releaseDecade50s                 Boolean                     @default(false)
+  releaseDecade60s                 Boolean                     @default(false)
+  releaseDecade70s                 Boolean                     @default(false)
+  releaseDecade80s                 Boolean                     @default(false)
+  releaseDecade90s                 Boolean                     @default(false)
+  releaseDecade00s                 Boolean                     @default(false)
+  releaseDecade10s                 Boolean                     @default(false)
+  releaseDecade20s                 Boolean                     @default(false)
+  releaseNumberDiscs               Int                         @default(0)
+  releaseReviewRating              Int                         @default(0)
+  releaseWantlistRating            Int                         @default(0)
+  releaseTimesPlayed               Int                         @default(0)
+  releaseLastPlayed                DateTime                    @default(dbgenerated("'1970-01-01 01:00:01+00'::timestamp with time zone")) @db.Timestamptz(6)
+  releaseAddedToDiscogs            DateTime                    @default(dbgenerated("'1970-01-01 01:00:01+00'::timestamp with time zone")) @db.Timestamptz(6)
+  releaseIsNewAddition             Boolean                     @default(false)
+  releaseIsNew                     Boolean                     @default(false)
+  releaseTracksAdded               DateTime                    @default(dbgenerated("'1970-01-01 01:00:01+00'::timestamp with time zone")) @db.Timestamptz(6)
+  releaseLibrary                   Boolean                     @default(false)
+  releaseWantlist                  Boolean                     @default(false)
+  releaseSlug                      String                      @id @unique @db.VarChar(300)
+  createdAt                        DateTime                    @default(now()) @db.Timestamptz(6)
+  updatedAt                        DateTime                    @default(now()) @db.Timestamptz(6)
+  blogCollectionItems              blogCollectionItems[]
+  blogPAPlaylistItems              blogPAPlaylistItems[]
+  blogPost                         blogPost[]
+  libraryLocations_currentLocation libraryLocations[]          @relation("currentLocation")
+  libraryArtists                   libraryArtists[]
+  libraryFormats                   libraryFormats[]
+  libraryGenres                    libraryGenres[]
+  libraryLocations_libraryLocation libraryLocations[]          @relation("libraryLocation")
+  libraryRecordLabels              libraryRecordLabels[]
+  libraryShelves                   libraryShelves[]
+  libraryStyles                    libraryStyles[]
+  libraryTracks                    libraryTracks[]
+  libraryUnavailableReasons        libraryUnavailableReasons[] @relation("releaseUnavailable")
+}
+
+model libraryShelves {
+  shelfId         String            @unique @db.VarChar(256)
+  shelfName       String            @db.VarChar(512)
+  shelfCount      Int               @default(0)
+  shelfLibrary    Boolean           @default(false)
+  shelfWantlist   Boolean           @default(false)
+  shelfPrivate    Boolean           @default(false)
+  shelfSlug       String            @id @unique @db.VarChar(300)
+  createdAt       DateTime          @default(now()) @db.Timestamptz(6)
+  updatedAt       DateTime          @default(now()) @db.Timestamptz(6)
+  libraryReleases libraryReleases[]
+}
+
+model libraryStyles {
+  style           String            @unique @db.VarChar(256)
+  styleCount      Int               @default(0)
+  styleLibrary    Boolean           @default(false)
+  styleWantlist   Boolean           @default(false)
+  styleSlug       String            @id @unique @db.VarChar(256)
+  createdAt       DateTime          @default(now()) @db.Timestamptz(6)
+  updatedAt       DateTime          @default(now()) @db.Timestamptz(6)
+  libraryReleases libraryReleases[]
+}
+
+model libraryTracks {
+  trackId                   String                      @unique @db.VarChar(256)
+  trackPosition             String                      @db.VarChar(256)
+  trackTitle                String                      @db.VarChar(1024)
+  trackSortLetter           String                      @default("-") @db.VarChar(1)
+  trackSortName             String                      @default("-") @db.VarChar(1024)
+  trackTimesPlayed21        Int                         @default(0)
+  trackTimesPlayed22        Int                         @default(0)
+  trackTimesPlayed23        Int                         @default(0)
+  trackLastPlayed           DateTime                    @default(dbgenerated("'1970-01-01 01:00:01+00'::timestamp with time zone")) @db.Timestamptz(6)
+  trackIsHeading            Boolean                     @default(false)
+  trackIsIndex              Boolean                     @default(false)
+  trackIsSubtrack           Boolean                     @default(false)
+  trackSlug                 String                      @id @unique @db.VarChar(1024)
+  createdAt                 DateTime                    @default(now()) @db.Timestamptz(6)
+  updatedAt                 DateTime                    @default(now()) @db.Timestamptz(6)
+  libraryArtists            libraryArtists[]
+  libraryReleases           libraryReleases[]
+  trackOnPlaylist           trackOnPlaylist[]
+  trackPlanning             trackPlanning[]
+  libraryUnavailableReasons libraryUnavailableReasons[] @relation("trackUnavailable")
+}
+
+model libraryUnavailableReasons {
+  unavailablereason String            @id @unique @db.VarChar(512)
+  createdAt         DateTime          @default(now()) @db.Timestamptz(6)
+  updatedAt         DateTime          @default(now()) @db.Timestamptz(6)
+  libraryReleases   libraryReleases[] @relation("releaseUnavailable")
+  libraryTracks     libraryTracks[]   @relation("trackUnavailable")
+}
+
+model radioStationDetails {
+  radioStationDetailsName       String        @db.VarChar(512)
+  radioStationDetailsAbout      String?       @db.VarChar(2048)
+  radioStationDetailsLogo       String        @db.VarChar(256)
+  radioStationDetailsURL        String        @db.VarChar(512)
+  radioStationDetailsActive     Boolean       @default(false)
+  radioStationDetailsLiveStream String?       @db.VarChar(512)
+  radioStationDetailsSlug       String        @id @db.VarChar(256)
+  createdAt                     DateTime      @default(now()) @db.Timestamptz(6)
+  updatedAt                     DateTime      @default(now()) @db.Timestamptz(6)
+  bookedShows                   bookedShows[]
+  socialMedia                   socialMedia[]
+}
+
+model showTypes {
+  showType       String           @id @unique @db.VarChar(30)
+  createdAt      DateTime         @default(now()) @db.Timestamptz(6)
+  updatedAt      DateTime         @default(now()) @db.Timestamptz(6)
+  availableShows availableShows[]
+  bookedShows    bookedShows[]
+}
+
+model socialMedia {
+  socialMediaId       String                @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  socialMediaPlatform String                @db.VarChar(256)
+  socialMediaLink     String                @db.VarChar(256)
+  socialMediaIcon     String                @db.VarChar(256)
+  createdAt           DateTime              @default(now()) @db.Timestamptz(6)
+  updatedAt           DateTime              @default(now()) @db.Timestamptz(6)
+  radioStationDetails radioStationDetails[]
+}
+
+model trackOnPlaylist {
+  trackOnPlaylistId String          @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  trackStatus       TrackStatus     @default(Listed)
+  trackFeature      FeatureType?
+  createdAt         DateTime        @default(now()) @db.Timestamptz(6)
+  updatedAt         DateTime        @default(now()) @db.Timestamptz(6)
+  blogPlaylist      blogPlaylist[]
+  libraryTracks     libraryTracks[]
+  trackPlanning     trackPlanning[]
+}
+
+model trackPlanning {
+  trackPlanningId String            @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  trackFeature    FeatureType?      @default(Listener_Request)
+  createdAt       DateTime          @default(now()) @db.Timestamptz(6)
+  updatedAt       DateTime          @default(now()) @db.Timestamptz(6)
+  requestedBy     String?           @db.VarChar(256)
+  requestedFor    String?           @db.VarChar(256)
+  requestMessage  String?           @db.VarChar(512)
+  trackPlayed     TrackStatus       @default(Listed)
+  libraryTracks   libraryTracks[]
+  trackOnPlaylist trackOnPlaylist[]
+}
+
+model userAccounts {
+  userAccountName          String         @db.VarChar(512)
+  userAccountPassword      String         @db.VarChar(512)
+  userAccountEmail         String         @unique @db.VarChar(512)
+  userAccountEnabled       Boolean        @default(false)
+  userAccountDeleted       Boolean        @default(false)
+  userAccountAdministrator Boolean        @default(false)
+  userAccountSlug          String         @id @unique @db.VarChar(256)
+  createdAt                DateTime       @default(now()) @db.Timestamptz(6)
+  updatedAt                DateTime       @default(now()) @db.Timestamptz(6)
+  blogPlaylist             blogPlaylist[]
+  blogPost                 blogPost[]
+}
+
+model vinylEmporiums {
+  vinylEmporiumId           String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  vinylEmporiumName         String  @db.VarChar(512)
+  vinylEmporiumStreet       String? @db.VarChar(512)
+  vinylEmporiumTown         String  @db.VarChar(512)
+  vinylEmporiumCounty       String? @db.VarChar(512)
+  vinylEmporiumPostcode     String? @db.VarChar(10)
+  vinylEmporiumCountry      String? @db.VarChar(128)
+  vinylEmporiumPhone        String? @db.VarChar(32)
+  vinylEmporiumEmail        String? @db.VarChar(512)
+  vinylEmporiumGoogleMaps   String? @db.VarChar(512)
+  vinylEmporiumDiscogsStore String? @db.VarChar(512)
+  vinylEmporiumWebsite      String? @db.VarChar(512)
+  vinylEmporiumFaceBook     String? @db.VarChar(512)
+  vinylEmporiumTwitter      String? @db.VarChar(512)
+  vinylEmporiumInstagram    String? @db.VarChar(512)
+  vinylEmporiumYouTube      String? @db.VarChar(512)
+}
+
+enum FeatureType {
+  None
+  Listener_Request
+  HalfPast_DoubleShot
+  In_Memoriam
+  Featured_On_Promo_Image
+  Featured_Artist
+  Featured_Album
+  Track_By_Track
+  Lefting_Original
+  Lefting_Cover
+  Special_3_Play
+  Special_4_Play
+  Golden_Year
+  World_Tour
+}
+
+enum TrackStatus {
+  Played
+  Current
+  Next
+  Listed
+  Rejected
+}

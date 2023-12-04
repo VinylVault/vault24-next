@@ -1,3 +1,6 @@
+import { PrismaClient } from '@prisma/client'
+const prisma = new PrismaClient()
+
 /**
  * Fetches the shelf details from the library API.
  * 
@@ -6,11 +9,8 @@
  */
 export const fetchShelf = async (folderId: string): Promise<string[]> => {
     try {
-      const response = await fetch("http://api.thevinylvaultshow.co.uk:7000/library_api/shelves/", {
-        cache: 'no-store'
-      });
-      const data: Array<{ shelfId: string; shelfSlug: string }> = await response.json();
-      const libraryShelfDetailsSlug = data
+      const shelfData = await prisma.libraryGenres.findMany;
+      const libraryShelfDetailsSlug = shelfData
         .filter((libraryData) => libraryData.shelfId === folderId)
         .map((libraryData) => libraryData.shelfSlug);
       return libraryShelfDetailsSlug;

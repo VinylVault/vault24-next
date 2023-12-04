@@ -1,8 +1,8 @@
-import { fetchGenres } from "../api/localConnect"
+import { fetchGenres } from '../api/localConnect';
 
 export const genres = [
-    "ALL",
-    'Rock',
+  'ALL',
+  'Rock',
   'Folk, World, & Country',
   'Pop',
   'Funk / Soul',
@@ -16,5 +16,5 @@ export const genres = [
   "Children's",
   'Classical',
   'Brass & Military',
-  'Non-Music'
-]
+  'Non-Music',
+];
