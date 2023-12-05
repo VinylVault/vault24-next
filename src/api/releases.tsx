@@ -27,7 +27,8 @@ export async function getRecentReleases() {
       ],
     },
   });
-  console.log(getRecentReleases);
+  // console.log(getRecentReleases);
+  prisma.$disconnect()
   return getRecentReleases;
 }
 
@@ -56,12 +57,13 @@ export async function getAllReleases() {
       ],
     },
   });
-  console.log(getReleaseList);
+  // console.log(getReleaseList);
+  prisma.$disconnect()
   return getReleaseList;
 }
 
 export async function getOneRelease(releaseSlug:string) {
-  console.log(releaseSlug)
+  // console.log(releaseSlug)
   const getReleaseDetails = await prisma.libraryReleases.findUnique({
     include: {
       libraryArtists: true,
@@ -80,6 +82,7 @@ export async function getOneRelease(releaseSlug:string) {
       releaseSlug,
     },
   });
-  console.log(getReleaseDetails);
+  // console.log(getReleaseDetails);
+  prisma.$disconnect()
   return getReleaseDetails;
 }

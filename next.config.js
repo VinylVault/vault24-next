@@ -11,20 +11,12 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'http',
-        hostname: '192.168.0.10',
-        port: '7000',
-        pathname: '/media/**',
-      },
-      {
-        protocol: 'http',
-        hostname: 'api.thevinylvaultshow.co.uk',
-        port: '7000',
-        pathname: '/media/**',
+        protocol: 'https',
+        hostname: 'm.media-amazon.com',
       },
       {
         protocol: 'https',
-        hostname: 'm.media-amazon.com',
+        hostname: 'i.discogs.com',
       }
     ],
   },
