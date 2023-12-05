@@ -1,4 +1,3 @@
-import { fetchGenres } from '../api/localConnect';
 
 export const genres = [
   'ALL',
