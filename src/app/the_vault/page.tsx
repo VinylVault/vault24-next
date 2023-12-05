@@ -7,7 +7,7 @@ export default async function TheVault() {
   const localRecentReleases = await getRecentReleases();
 
   return (
-    <div className="flex flex-col items-center px-24 bg-vault-background">
+    <div className="flex flex-col items-center lg:px-12 bg-vault-background">
       <h2 className="text-6xl font-bold font-title text-vault-title">
         The Vinyl Vault Library
       </h2>

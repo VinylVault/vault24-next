@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { formatTimeAgo } from "@/utils/formatTimeAgo"
+import Link from "next/link"
 
 type ReleaseGridItemsProps = {
     releaseTitle: string
@@ -34,8 +35,8 @@ export function ReleaseGridItems({
 }: ReleaseGridItemsProps) {
     return(
         <>
-        <div className="flex flex-col gap-2 shadow-lg shadow-vault-menubar hover:shadow-vault-link transition duration-500 rounded-xl">
-            <a href={`/the_vault/releases/${releaseSlug}`} className="relative aspect-square w-full rounded-xl overflow-hidden ">
+        <div className="flex flex-col gap-2 w-full shadow-lg shadow-vault-menubar hover:shadow-vault-link transition duration-500 rounded-xl">
+            <Link href={`/the_vault/releases/${releaseSlug}`} className="relative aspect-square w-full rounded-xl overflow-hidden ">
                 <Image 
                 src={releaseLocalImage}
                 className="block text-vault-link col-span-3 object-fill rounded-xl grayscale hover:grayscale-0 transition duration-500 ease-in-out"
@@ -44,7 +45,7 @@ export function ReleaseGridItems({
                 height={1000} // 100%
                 title={releaseTitle}
                 />
-            </a>
+            </Link>
             
             <div className="flex flex-col">
                 {releaseIsNew && <div className="bg-vault-menubar text-vault-title text-sm text-center px-1 rounded-xl">

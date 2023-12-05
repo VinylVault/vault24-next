@@ -26,6 +26,10 @@ export async function getRecentReleases() {
         },
       ],
     },
+    orderBy: {
+      releaseAddedToDiscogs: 'desc',
+    },
+    take: 50,
   });
   // console.log(getRecentReleases);
   prisma.$disconnect()
@@ -33,6 +37,7 @@ export async function getRecentReleases() {
 }
 
 export async function getAllReleases() {
+  
   const getReleaseList = await prisma.libraryReleases.findMany({
     include: {
       libraryArtists: true,
@@ -55,6 +60,9 @@ export async function getAllReleases() {
           },
         },
       ],
+    },
+    orderBy: {
+      releaseSortName: 'asc',
     },
   });
   // console.log(getReleaseList);
