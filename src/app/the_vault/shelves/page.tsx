@@ -2,6 +2,7 @@
 import { ShelfGridItems } from '@/components/ShelfGridItems';
 import Link from 'next/link';
 import { getShelves } from '@/api/shelves';
+export const dynamic = 'force-dynamic'
 
 export default async function TheVaultShelvesList() {
 

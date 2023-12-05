@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic'
 import { ReleaseGridItems } from "@/components/ReleaseGridItems"
 import { getRecentReleases } from "@/api/releases"
 
@@ -5,7 +6,6 @@ import { getRecentReleases } from "@/api/releases"
 export default async function TheVault() {
     
     const localRecentReleases = await getRecentReleases()
-    // console.log(localRecentReleases)
 
     return (
 

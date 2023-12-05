@@ -1,6 +1,6 @@
 import { getAllReleases } from "@/api/releases"
 import { ReleaseGridItems } from "@/components/ReleaseGridItems"
-
+export const dynamic = 'force-dynamic'
 export default async function LibraryReleaseList() {
 
     let localReleases = await getAllReleases()
