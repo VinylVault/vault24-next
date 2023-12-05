@@ -34,39 +34,61 @@ export default async function TheVaultReleaseDetails({
             <strong>Release Title:</strong> {localRelease?.releaseTitle}
           </p>
           <p className="text-vault-text mx-2 mb-1 text-lg">
-            <strong>Released By:</strong> {localRelease?.libraryArtists.map(artist => artist.artistName).join(", ")}
+            <strong>Released By:</strong>{' '}
+            {localRelease?.libraryArtists
+              .map((artist) => artist.artistName)
+              .join(', ')}
           </p>
           <p className="text-vault-text mx-2 mb-1 text-lg">
-            <strong>Record Label:</strong> {localRelease?.libraryRecordLabels.map(recordLabel => recordLabel.recordlabelName).join(", ")}
+            <strong>Record Label:</strong>{' '}
+            {localRelease?.libraryRecordLabels
+              .map((recordLabel) => recordLabel.recordlabelName)
+              .join(', ')}
           </p>
           <p className="text-vault-text mx-2 mb-1 text-lg">
-            <strong>Catalogue Number:</strong> {localRelease?.releaseCatalogueNumber}
+            <strong>Catalogue Number:</strong>{' '}
+            {localRelease?.releaseCatalogueNumber}
           </p>
           <p className="text-vault-text mx-2 mb-1 text-lg">
-            <strong>Format:</strong> {localRelease?.libraryFormats.map(format => format.format).join(", ")}
+            <strong>Format:</strong>{' '}
+            {localRelease?.libraryFormats
+              .map((format) => format.format)
+              .join(', ')}
           </p>
           <p className="text-vault-text mx-2 mb-1 text-lg">
-            <strong>In Vinyl Vault Since:</strong> {localRelease?.releaseAddedToDiscogs.toDateString()}
+            <strong>In Vinyl Vault Since:</strong>{' '}
+            {localRelease?.releaseAddedToDiscogs.toDateString()}
           </p>
         </div>
       </div>
       <h3 className="text-4xl p-4 font-bold font-title text-vault-title">
-          Track Listing
+        Track Listing
       </h3>
-      <div className="grid gap-4 md:grid-cols-4 pb-8 grid-cols-1 mx-auto">
-      {localRelease?.libraryTracks.map(track => (
-        <><div className='col-span-2'>
-          <p className="text-vault-text align-left mx-2 my-2 text-lg">
-            <strong>{track.trackPosition} </strong> {track.trackTitle} <br/> {track.libraryArtists.map(artist => artist.artistName).join(", ")}
-          </p>
-        </div>
-        <div className='col=span-1'>
-            <p className="text-vault-text align-left mx-2 my-2 text-lg">Last Played: {track.trackLastPlayed.toDateString()}</p>
-          </div>
-          <div className='col=span-1'>
-            <p className="text-vault-text align-left mx-2 my-2 text-lg">REQUEST</p>
-          </div></>
-      ))}
+      <div className="grid gap-4 md:grid-cols-4 pb-8 grid-cols-1 mx-12">
+        {localRelease?.libraryTracks.map((track) => (
+          <>
+            <div className="md:col-span-2">
+              <p className="text-vault-text align-left mx-2 md:my-2 text-lg">
+                <strong>{track.trackPosition} </strong> {track.trackTitle}{' '}
+                <br />{' '}
+                {track.libraryArtists
+                  .map((artist) => artist.artistName)
+                  .join(', ')}
+              </p>
+            </div>
+            <div className="col=span-1">
+              <p className="text-vault-text align-left mx-2 md:my-2 text-lg">
+                Last Played: <br />
+                {track.trackLastPlayed.toDateString()}
+              </p>
+            </div>
+            <div className="col=span-1">
+              <p className="text-vault-text align-left mx-2 md:my-2 text-lg">
+                REQUEST
+              </p>
+            </div>
+          </>
+        ))}
       </div>
     </div>
   );
