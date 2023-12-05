@@ -1,15 +1,12 @@
 // "use client"
-import { fetchShelves, importShelves } from '@/app/api/localConnect';
 import { ShelfGridItems } from '@/components/ShelfGridItems';
 import Link from 'next/link';
-import { PrismaClient } from '@prisma/client';
-const prisma = new PrismaClient();
+import { getShelves } from '@/api/shelves';
+
 export default async function TheVaultShelvesList() {
-  // await importShelves()
-  const shelfData = await prisma.libraryGenres.findMany();
+
+  const shelfData = await getShelves();
   console.log(shelfData);
-  // let shelves = undefined
-  // shelves = await fetchShelves()
 
   return (
     <div className="flex flex-col items-center p-24 bg-vault-background">

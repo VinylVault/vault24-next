@@ -1,10 +1,9 @@
-import { fetchReleases } from "@/app/api/localConnect"
+import { getAllReleases } from "@/api/releases"
 import { ReleaseGridItems } from "@/components/ReleaseGridItems"
 
 export default async function LibraryReleaseList() {
 
-    let localReleases = undefined
-    localReleases = await fetchReleases()
+    let localReleases = await getAllReleases()
 
     return (
         <div className="flex min-h-screen flex-col items-center p-24 bg-vault-background">

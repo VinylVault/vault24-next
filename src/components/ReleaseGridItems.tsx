@@ -3,12 +3,19 @@ import { formatTimeAgo } from "@/utils/formatTimeAgo"
 
 type ReleaseGridItemsProps = {
     releaseTitle: string
-    releaseArtists: ReleaseArtistProps[]
-    releaseYear: string
+    libraryArtists: ReleaseArtistProps[]
+    releaseYear: number
     releaseLocalImage: string
     releaseSlug: string
     releaseAddedToDiscogs: Date
     releaseIsNew: boolean
+    releaseIsNewAddition: boolean
+    libraryShelves: ReleaseShelfProps[]
+}
+
+type ReleaseShelfProps = {
+    shelfName: string
+    shelfSlug: string
 }
 
 type ReleaseArtistProps = {
@@ -18,11 +25,12 @@ type ReleaseArtistProps = {
 }
 export function ReleaseGridItems({
     releaseTitle,
-    releaseArtists,
+    libraryArtists,
     releaseLocalImage,
     releaseSlug,
     releaseAddedToDiscogs,
-    releaseIsNew
+    releaseIsNew,
+    releaseIsNewAddition
 }: ReleaseGridItemsProps) {
     return(
         <>
@@ -42,8 +50,11 @@ export function ReleaseGridItems({
                 {releaseIsNew && <div className="bg-vault-menubar text-vault-title text-sm text-center px-1 rounded-xl">
                     <p>New Release</p>
                 </div>}
+                {releaseIsNewAddition && <div className="bg-vault-menubar text-vault-title text-sm text-center px-1 rounded-xl">
+                    <p>New Addition</p>
+                </div>}
                 <p className="text-vault-text mx-2 mb-1 font-bold text-lg">{releaseTitle}</p>
-                <p className="text-vault-text mx-2 mb-1 font-title text-lg">{releaseArtists.map(artist => artist.artistName).join(", ")}</p>
+                <p className="text-vault-text mx-2 mb-1 font-title text-lg">{libraryArtists.map(artist => artist.artistName).join(", ")}</p>
                 <p className="text-vault-text mx-2 mb-2 font-vault-title font-title text-lg">Added: {formatTimeAgo(releaseAddedToDiscogs)}</p>
             </div>
                     

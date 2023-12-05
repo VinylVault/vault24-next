@@ -22,6 +22,10 @@ const nextConfig = {
         port: '7000',
         pathname: '/media/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'm.media-amazon.com',
+      }
     ],
   },
 };

@@ -1,11 +1,10 @@
-import { recentReleases } from "@/app/api/localConnect"
 import { ReleaseGridItems } from "@/components/ReleaseGridItems"
+import { getRecentReleases } from "@/api/releases"
 
 
 export default async function TheVault() {
     
-    let localRecentReleases = undefined
-    localRecentReleases = await recentReleases()
+    const localRecentReleases = await getRecentReleases()
     // console.log(localRecentReleases)
 
     return (
@@ -15,10 +14,10 @@ export default async function TheVault() {
         <h3 className='text-4xl font-bold font-title text-vault-genre'>Recent Releases</h3>
         
             <div className="grid gap-4 lg:grid-cols-5 md:grid-cols-2 grid-cols-1 mr-4">
-                {localRecentReleases.map(release => (
+                {localRecentReleases.map((releaseList: any) => (
                     <ReleaseGridItems
-                    key={release.releaseSlug}
-                    {...release}
+                    key={releaseList.releaseSlug}
+                    {...releaseList}
                     />
                 ))}
             </div>
