@@ -18,8 +18,8 @@ export default async function TheVaultReleaseDetails({
           {localRelease?.releaseTitle}
         </span>
       </h3>
-      <div className="grid gap-4 md:grid-cols-4 pb-8 grid-cols-1 mx-auto border-b-2 border-vault-text">
-        <div className="flex flex-col col-span-1 md:border-r-2 pr-8 border-vault-text">
+      <div className="grid gap-4 md:grid-cols-4 pb-8 grid-cols-1 mx-auto border-b-2 border-vault-border">
+        <div className="flex flex-col col-span-1 md:border-r-2 pr-8 border-vault-border">
           <Image
             src={localRelease?.releaseLocalImage ?? '#'}
             alt={localRelease?.releaseTitle ?? ''}

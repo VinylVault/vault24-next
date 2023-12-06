@@ -7,7 +7,7 @@ import { useSidebarContext } from "@/contexts/SidebarContext"
 export function PageHeader() {
     const [showFullWidthSearch, setShowFullWidthSearch] = useState(false)
     return (
-        <div className="flex gap-5 lg:gap-20 justify-between bg-vault-menubar pt-2 pb-2 px-2">
+        <div className="flex gap-5 lg:gap-20 justify-between bg-vault-menubar pt-2 pb-2 px-2 border-b-2 border-vault-border">
             <PageHeaderFirstSection hidden={false}/>
             <form className={`gap-4 flex-grow justify-center" ${showFullWidthSearch ? "flex" : "hidden md:flex"}`}>
                 {showFullWidthSearch && (
