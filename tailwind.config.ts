@@ -23,6 +23,8 @@ const config: Config = {
           link: colors.lime[500],
           border: colors.sky[400],
           live: colors.red[600],
+          genre: colors.orange[500],
+          genreBackground: colors.orange[100]
         }
       }
     },

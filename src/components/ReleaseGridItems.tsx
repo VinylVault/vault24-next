@@ -9,6 +9,7 @@ type ReleaseGridItemsProps = {
     releaseLocalImage: string
     releaseSlug: string
     releaseAddedToDiscogs: Date
+    releaseLastPlayed: Date
     releaseIsNew: boolean
     releaseIsNewAddition: boolean
     libraryShelves: ReleaseShelfProps[]
@@ -30,6 +31,7 @@ export function ReleaseGridItems({
     releaseLocalImage,
     releaseSlug,
     releaseAddedToDiscogs,
+    releaseLastPlayed,
     releaseIsNew,
     releaseIsNewAddition
 }: ReleaseGridItemsProps) {
@@ -57,6 +59,7 @@ export function ReleaseGridItems({
                 <p className="text-vault-text mx-2 mb-1 font-bold text-lg">{releaseTitle}</p>
                 <p className="text-vault-text mx-2 mb-1 font-title text-lg">{libraryArtists.map(artist => artist.artistName).join(", ")}</p>
                 <p className="text-vault-text mx-2 mb-2 font-vault-title font-title text-lg">Added: {formatTimeAgo(releaseAddedToDiscogs)}</p>
+                <p className="text-vault-text mx-2 mb-2 font-vault-title font-title text-lg">Last Played: {formatTimeAgo(releaseLastPlayed)}</p>
             </div>
                     
         </div>
