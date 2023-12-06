@@ -118,7 +118,7 @@ export function Sidebar() {
           <LargeSidebarItem
             Icon={Disc3}
             title="Discogs"
-            url="/social/discogs"
+            url="https://www.discogs.com/user/DexVinyl"
           />
         </LargeSidebarSection>
         <LargeSidebarSection title="Treat The Vinyl Vault">

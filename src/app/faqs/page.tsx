@@ -76,35 +76,43 @@ export default function OnAir() {
             <strong>Answer:</strong> The best way to answer this question is to
             give you the live numbers from the database.
           </p>
-          <p className="text-vault-text mx-8 mb-1 text-lg">
-            <ol>
-              <li>
+          <ol>
+            <li>
+              <p className="text-vault-text mx-8 mb-1 text-lg">
                 <strong>Number of Albums:</strong> 1,000
-              </li>
-              <li>
+              </p>
+            </li>
+            <li>
+              <p className="text-vault-text mx-8 mb-1 text-lg">
                 <strong>Number of Singles:</strong> 1,000
-              </li>
-              <li>
+              </p>
+            </li>
+            <li>
+              <p className="text-vault-text mx-8 mb-1 text-lg">
                 <strong>Number of Tracks:</strong> 1,000
-              </li>
-              <li>
+              </p>
+            </li>
+            <li>
+              <p className="text-vault-text mx-8 mb-1 text-lg">
                 <strong>Number of Artists:</strong> 1,000
-              </li>
-              <li>
+              </p>
+            </li>
+            <li>
+              <p className="text-vault-text mx-8 mb-1 text-lg">
                 <strong>
                   Number of Items On Dex&apos;s Wishlist / Wantlist:
                 </strong>{' '}
                 1,000
-              </li>
-            </ol>
-          </p>
+              </p>
+            </li>
+          </ol>
         </div>
         <div className="grid gap-4 w-full grid-cols-1 m-4" id="q3_how_long">
           <h4 className="text-4xl font-bold font-title text-vault-genre">
             Question 3: How Long Has The Vinyl Vault Been On Air?
           </h4>
           <p className="text-vault-text mx-8 mb-1 text-lg">
-            <strong>Answer:</strong> Offically{' '}
+            <strong>Answer:</strong> Officially{' '}
             <strong>The Vinyl Vault Show</strong> started in June 2015, for
             BearTown Radio in Congleton, East Cheshire. However, before then, I
             was presenting a daily morning show on 6Towns Radio in
@@ -259,7 +267,7 @@ export default function OnAir() {
             <Link className="text-vault-link" href="/about">
               Post|Apocalype Playlist
             </Link>{' '}
-            you will see a few of my regular listens.
+            in the Blog, you will see a few of my regular listens.
           </p>
         </div>
       </div>
