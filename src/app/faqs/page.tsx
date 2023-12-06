@@ -13,50 +13,56 @@ export default function OnAir() {
         <div className="grid gap-4 w-full lg:grid-cols-4 md:grid-cols-2 grid-cols-1 mr-4">
           <p className="text-vault-text mx-2 mb-1 text-lg">
             <strong>Question 1:</strong>{' '}
-            <Link href="/faqs#q1_most_recent">
+            <Link href="/faqs#q1_most_recent" className='text-vault-link'>
               What Are The Most Recent Additions?
             </Link>
           </p>
           <p className="text-vault-text mx-2 mb-1 text-lg">
             <strong>Question 2:</strong>{' '}
-            <Link href="/faqs#q2_statistics">
+            <Link href="/faqs#q2_statistics" className='text-vault-link'>
               What Are The Statistics For The Vinyl Vault?
             </Link>
           </p>
           <p className="text-vault-text mx-2 mb-1 text-lg">
             <strong>Question 3:</strong>{' '}
-            <Link href="/faqs#q3_how_long">
+            <Link href="/faqs#q3_how_long" className='text-vault-link'>
               How Long Has The Vinyl Vault Been On Air?
             </Link>
           </p>
           <p className="text-vault-text mx-2 mb-1 text-lg">
-            <Link href="/faqs#q4_best_find">
-              <strong>Question 4:</strong> Best Crate Digging Find?
+            <strong>Question 4:</strong>{' '}
+            <Link href="/faqs#q4_best_find" className='text-vault-link'>
+              Best Crate Digging Find?
             </Link>
           </p>
           <p className="text-vault-text mx-2 mb-1 text-lg">
-            <Link href="/faqs#q5_buy_collections">
-              <strong>Question 5:</strong> Do You Buy Collections?
+            <strong>Question 5:</strong>{' '} 
+            <Link href="/faqs#q5_buy_collections" className='text-vault-link'>
+              Do You Buy Collections?
             </Link>
           </p>
           <p className="text-vault-text mx-2 mb-1 text-lg">
-            <Link href="/faqs#q6_favourite_record_shop">
-              <strong>Question 6:</strong> Favourite Record Shop?
+            <strong>Question 6:</strong>{' '} 
+            <Link href="/faqs#q6_favourite_record_shop" className='text-vault-link'>
+              Favourite Record Shop?
             </Link>
           </p>
           <p className="text-vault-text mx-2 mb-1 text-lg">
-            <Link href="/faqs#q7_discogs_sellers">
-              <strong>Question 7:</strong> Recommended Discogs Sellers?
+            <strong>Question 7:</strong>{' '}
+            <Link href="/faqs#q7_discogs_sellers" className='text-vault-link'>
+              Recommended Discogs Sellers?
             </Link>
           </p>
           <p className="text-vault-text mx-2 mb-1 text-lg">
-            <Link href="/faqs#q8_least_favourite_record_shop">
-              <strong>Question 8:</strong> Least Favourite Record Shop?
+            <strong>Question 8:</strong>{' '}
+            <Link href="/faqs#q8_least_favourite_record_shop" className='text-vault-link'>
+              Least Favourite Record Shop?
             </Link>
           </p>
           <p className="text-vault-text mx-2 mb-1 text-lg">
-            <Link href="/faqs#q9_favourite_record_in_vinyl_vault">
-              <strong>Question 9:</strong> Favourite Record In The Vinyl Vault?
+            <strong>Question 9:</strong>{' '}
+            <Link href="/faqs#q9_favourite_record_in_vinyl_vault" className='text-vault-link'>
+              Favourite Record In The Vinyl Vault?
             </Link>
           </p>
         </div>
