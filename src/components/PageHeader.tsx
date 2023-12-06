@@ -21,7 +21,7 @@ export function PageHeader() {
                         placeholder="Search The Vinyl Vault"
                         className="w-full bg-vault-background text-vault-text p-2 rounded-l-full  border py-1 px-4 text-lg border-vault-link focus:bg-white focus:text-black outline-none"
                     />
-                <Button size="icon" className="py-2 px-4 rounded-r-full rounded-l-none border-vault-link  border border-l-0 flex-shrink-0">
+                <Button size="icon" className="py-2 px-4 rounded-r-full rounded-l-none border-vault-link  border border-l-0 flex-shrink-0" aria-label="Search The Vinyl Vault">
                     <Search/>
                 </Button>
                 </div>
@@ -31,10 +31,10 @@ export function PageHeader() {
                 <Button onClick={() => setShowFullWidthSearch(true)} size="icon" className="md:hidden">
                     <Search/>
                 </Button>
-                <Button size="icon">
+                <Button size="icon" aria-label="Notifications">
                     <Bell/>
                 </Button>
-                <Button size="icon">
+                <Button size="icon" aria-label="User Page">
                     <User/>
                 </Button>
             </div>

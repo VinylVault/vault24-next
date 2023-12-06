@@ -44,7 +44,7 @@ export function Sidebar() {
         }`}
       >
         <SmallSidebarItem Icon={Home} title="Home" url="/" />
-        <hr className="text-vault-genre" />
+        <p className='pt-2 border-t-2 border-vault-border'/>
         <SmallSidebarItem Icon={Disc2} title="The Vault" url="/the_vault" />
         <SmallSidebarItem
           Icon={Headphones}
@@ -54,7 +54,7 @@ export function Sidebar() {
         <SmallSidebarItem Icon={Calendar} title="Schedule" url="/schedule" />
         <SmallSidebarItem Icon={PenLine} title="Blog" url="/blog" />
         <SmallSidebarItem Icon={ShieldQuestion} title="FAQs" url="/faqs" />
-        <hr />
+        <p className='pt-2 border-t-2 border-vault-border'/>
         <SmallSidebarItem
           Icon={MessagesSquare}
           title="Contact"
@@ -82,6 +82,7 @@ export function Sidebar() {
           <PageHeaderFirstSection hidden={false} />
         </div>
         <LargeSidebarItem Icon={Home} title="Home" url="/" />
+        <p className='border-t-2 border-vault-border'/>
         <LargeSidebarSection title="The Vinyl Vault">
           <LargeSidebarItem Icon={Disc2} title="The Vault" url="/the_vault" />
           <LargeSidebarItem
@@ -93,6 +94,7 @@ export function Sidebar() {
           <LargeSidebarItem Icon={PenLine} title="Blog" url="/blog" />
           <LargeSidebarItem Icon={ShieldQuestion} title="FAQs" url="/faqs" />
         </LargeSidebarSection>
+        <p className='border-t-2 border-vault-border'/>
         <LargeSidebarSection title="Contact The Vinyl Vault">
           <LargeSidebarItem
             Icon={MessagesSquare}
@@ -121,6 +123,7 @@ export function Sidebar() {
             url="https://www.discogs.com/user/DexVinyl"
           />
         </LargeSidebarSection>
+        <p className='border-t-2 border-vault-border'/>
         <LargeSidebarSection title="Treat The Vinyl Vault">
           <LargeSidebarItem
             Icon={Coffee}
@@ -128,6 +131,7 @@ export function Sidebar() {
             url="/buy_a_coffee"
           />
         </LargeSidebarSection>
+        <p className='border-t-2 border-vault-border'/>
         <LargeSidebarSection title="Legal">
           <LargeSidebarItem
             Icon={Cookie}
@@ -150,6 +154,7 @@ export function Sidebar() {
             url="/legal/show_subscription_terms"
           />
         </LargeSidebarSection>
+        <p className='border-t-2 border-vault-border'/>
       </aside>
     </>
   );
