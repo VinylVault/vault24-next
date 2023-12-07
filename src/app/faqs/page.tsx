@@ -13,55 +13,64 @@ export default function OnAir() {
         <div className="grid gap-4 w-full lg:grid-cols-4 md:grid-cols-2 grid-cols-1 mr-4">
           <p className="text-vault-text mx-2 mb-1 text-lg">
             <strong>Question 1:</strong>{' '}
-            <Link href="/faqs#q1_most_recent" className='text-vault-link'>
+            <Link href="/faqs#q1_most_recent" className="text-vault-link">
               What Are The Most Recent Additions?
             </Link>
           </p>
           <p className="text-vault-text mx-2 mb-1 text-lg">
             <strong>Question 2:</strong>{' '}
-            <Link href="/faqs#q2_statistics" className='text-vault-link'>
+            <Link href="/faqs#q2_statistics" className="text-vault-link">
               What Are The Statistics For The Vinyl Vault?
             </Link>
           </p>
           <p className="text-vault-text mx-2 mb-1 text-lg">
             <strong>Question 3:</strong>{' '}
-            <Link href="/faqs#q3_how_long" className='text-vault-link'>
+            <Link href="/faqs#q3_how_long" className="text-vault-link">
               How Long Has The Vinyl Vault Been On Air?
             </Link>
           </p>
           <p className="text-vault-text mx-2 mb-1 text-lg">
             <strong>Question 4:</strong>{' '}
-            <Link href="/faqs#q4_best_find" className='text-vault-link'>
+            <Link href="/faqs#q4_best_find" className="text-vault-link">
               Best Crate Digging Find?
             </Link>
           </p>
           <p className="text-vault-text mx-2 mb-1 text-lg">
-            <strong>Question 5:</strong>{' '} 
-            <Link href="/faqs#q5_buy_collections" className='text-vault-link'>
+            <strong>Question 5:</strong>{' '}
+            <Link href="/faqs#q5_buy_collections" className="text-vault-link">
               Do You Buy Collections?
             </Link>
           </p>
           <p className="text-vault-text mx-2 mb-1 text-lg">
-            <strong>Question 6:</strong>{' '} 
-            <Link href="/faqs#q6_favourite_record_shop" className='text-vault-link'>
+            <strong>Question 6:</strong>{' '}
+            <Link
+              href="/faqs#q6_favourite_record_shop"
+              className="text-vault-link"
+            >
               Favourite Record Shop?
             </Link>
           </p>
           <p className="text-vault-text mx-2 mb-1 text-lg">
             <strong>Question 7:</strong>{' '}
-            <Link href="/faqs#q7_discogs_sellers" className='text-vault-link'>
+            <Link href="/faqs#q7_discogs_sellers" className="text-vault-link">
               Recommended Discogs Sellers?
             </Link>
           </p>
           <p className="text-vault-text mx-2 mb-1 text-lg">
             <strong>Question 8:</strong>{' '}
-            <Link href="/faqs#q8_least_favourite_record_shop" className='text-vault-link'>
+            <Link
+              href="/faqs#q8_least_favourite_record_shop"
+              className="text-vault-link"
+            >
               Least Favourite Record Shop?
             </Link>
           </p>
           <p className="text-vault-text mx-2 mb-1 text-lg">
             <strong>Question 9:</strong>{' '}
-            <Link href="/faqs#q9_favourite_record_in_vinyl_vault" className='text-vault-link'>
+            <Link
+              href="/faqs#q9_favourite_record_in_vinyl_vault"
+              className="text-vault-link"
+            >
               Favourite Record In The Vinyl Vault?
             </Link>
           </p>
@@ -188,6 +197,15 @@ export default function OnAir() {
           </p>
           <p className="text-vault-text mx-8 mb-1 text-lg">
             The only fair way to list these stores is alphabetically.
+          </p>
+          <p className="text-vault-text mx-8 mb-1 text-lg">
+            Of course, I always recommend that you check out your local
+            Independent Record Store, where ever you are in the world. But if
+            you can&apos;t or there is no Independent Record Store locally to you,
+            Discogs is full of independent record sellers, worldwide that will
+            post records to you. I have used the Discogs marketplace many times,
+            with extremely positive experiences, but take note of the feedback
+            left for sellers.
           </p>
         </div>
         <div
