@@ -12,10 +12,7 @@ import './globals.css'
 import { SidebarProvider } from '@/contexts/SidebarContext'
 
 
-// export const metadata: Metadata = {
-//   title: 'The Vinyl Vault Show',
-//   description: 'The Vinyl Vault Show website. Search our library and make requests. Read our blog ... And more.',
-// }
+
   
 export default function RootLayout({
   children,

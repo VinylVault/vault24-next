@@ -7,10 +7,17 @@
     "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint"
-  }, 
+  },
   "dependencies": {
     "@geist-ui/core": "^2.3.8",
-    "@prisma/client": "^5.6.0",
+    "@prisma/client": "^5.7.0",
+    "@twurple/api": "^7.0.6",
+    "@twurple/auth": "^7.0.6",
+    "@twurple/chat": "^7.0.6",
+    "@twurple/easy-bot": "^7.0.6",
+    "@twurple/eventsub-http": "^7.0.6",
+    "@twurple/eventsub-ws": "^7.0.6",
+    "@twurple/pubsub": "^7.0.6",
     "class-variance-authority": "^0.7.0",
     "fs-extra": "^11.2.0",
     "gray-matter": "^4.0.3",
@@ -33,7 +40,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.0.3",
     "postcss": "^8",
-    "prisma": "^5.6.0",
+    "prisma": "^5.7.0",
     "tailwindcss": "^3.3.3",
     "typescript": "^5"
   }

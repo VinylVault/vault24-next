@@ -4,15 +4,21 @@ import {
   Calendar,
   ChevronDown,
   ChevronUp,
+  Clock,
   Coffee,
   Cookie,
+  Disc,
   Disc2,
   Disc3,
+  Library,
   Facebook,
   Hammer,
   Headphones,
   Home,
   MessagesSquare,
+  Mic,
+  Mic2,
+  Plus,
   PenLine,
   Scale,
   ShieldQuestion,
@@ -83,8 +89,11 @@ export function Sidebar() {
         </div>
         <LargeSidebarItem Icon={Home} title="Home" url="/" />
         <p className='border-t-2 border-vault-border'/>
-        <LargeSidebarSection title="The Vinyl Vault">
+        <LargeSidebarSection title="The Vinyl Vault" visibleCount={10}>
           <LargeSidebarItem Icon={Disc2} title="The Vault" url="/the_vault" />
+          <LargeSidebarItem Icon={Plus} title="Recent Additions" url="/the_vault" />
+          <LargeSidebarItem Icon={Library} title="Full Collection" url="/the_vault/releases" />
+          <LargeSidebarItem Icon={Mic2} title="Artist List" url="/the_vault/artists" />
           <LargeSidebarItem
             Icon={Headphones}
             title="Archive"
@@ -95,7 +104,7 @@ export function Sidebar() {
           <LargeSidebarItem Icon={ShieldQuestion} title="FAQs" url="/faqs" />
         </LargeSidebarSection>
         <p className='border-t-2 border-vault-border'/>
-        <LargeSidebarSection title="Contact The Vinyl Vault">
+        <LargeSidebarSection title="Contact The Vinyl Vault" >
           <LargeSidebarItem
             Icon={MessagesSquare}
             title="Contact"
@@ -231,7 +240,7 @@ function LargeSidebarSection({
     ? childrenArray
     : childrenArray.slice(0, visibleCount);
   const ButtonIcon = isExpanded ? ChevronUp : ChevronDown;
-
+// https://youtu.be/ymGB1lqP1CM?t=5146
   return (
     <div>
       {title && (
@@ -243,7 +252,6 @@ function LargeSidebarSection({
       {showExpandButton && (
         <Button
           onClick={() => setIsExpanded((e) => !e)}
-          variant="genres"
           className="w-full h-6 flex items-center rounded-lg gap-3 p-3 px-2"
         >
           <ButtonIcon className="w-6 h-6" />
