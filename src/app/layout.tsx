@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import { useState } from 'react'
 import { genres } from "@/data/genresStyles"
 import { PageHeader } from '@/components/PageHeader'
+import { PageFooter } from '@/components/PageFooter'
 import { GenrePills } from '@/components/GenrePills'
 import { Sidebar } from '@/components/Sidebar'
 
@@ -43,6 +44,7 @@ export default function RootLayout({
                 </div>
               </div>
             </div>
+            <PageFooter />
           </div>
           </SidebarProvider>
       </body>
