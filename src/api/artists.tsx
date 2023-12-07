@@ -22,7 +22,7 @@ export async function getAllArtists() {
       },
     },
     orderBy: {
-      artistName: 'asc',
+      artistSortName: 'asc',
     },
   });
   prisma.$disconnect();
