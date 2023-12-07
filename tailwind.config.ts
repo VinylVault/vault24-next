@@ -24,7 +24,8 @@ const config: Config = {
           border: colors.sky[400],
           live: colors.red[600],
           genre: colors.orange[500],
-          genreBackground: colors.orange[100]
+          genreBackground: colors.orange[100],
+          twitch: '#9146FF'
         }
       }
     },
