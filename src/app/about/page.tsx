@@ -1,8 +1,9 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import { getLatestBlogPost } from '@/api/blog';
 import Link from 'next/link';
-import Image from 'next/image';
 import { getLatestPlayList } from '@/api/playlist';
+import { ShowArchiveGridItems } from '@/components/ShowArchiveGridItems';
+import { BlogPostGridItems } from '@/components/BlogPostGridItems';
 
 export default async function About() {
   const latestBlogPost = await getLatestBlogPost();
@@ -81,68 +82,18 @@ export default async function About() {
         or on DAB or FM radio.
       </p>
       <div className="grid md:grid-cols-2 grid-cols-1 p-4 gap-16 px-32">
-        {latestBlogPost?.map((post) => (
-          <div
-            key={post.blogPostSlug}
-            {...post}
-            className="flex flex-col gap-2 w-full shadow-lg shadow-vault-menubar hover:shadow-vault-link transition duration-500 rounded-xl p-6"
-          >
-            <p className='text-vault-title text-4xl text-center font-title font-bold'>Latest Blog Post</p>
-            <Image
-              src={post.blogPostImage ?? '/assets/vinyl_PNG21.png'}
-              className="block text-vault-link col-span-3 aspect-video object-fill rounded-xl grayscale hover:grayscale-0 transition duration-500 ease-in-out"
-              alt={post.blogPostTitle}
-              width={1000} // 100%
-              height={1000} // 100%
-              title={post.blogPostTitle}
-            />
-            <p className='text-vault-title text-2xl text-center font-title font-bold'>
-              {post.blogPostTitle}
-            </p>
-            <p className='text-vault-genre text-2xl text-center font-title'>{post.blogPostIntro}</p>
-            <p className='text-vault-text text-xl text-center font-title'>
-              <strong>Publish Date: </strong>
-              {post.blogPostPublishDate.toUTCString()}
-            </p>
-            {post.updatedAt && (
-              <p className='text-vault-text text-xl text-center font-title'>
-                <strong>Updated Date: </strong>
-                {post.updatedAt.toUTCString()}
-              </p>
-            )}
-          </div>
+      {latestBlogPost.map((blogPosts) => (
+          <BlogPostGridItems
+            key={blogPosts.blogPostSlug}
+            {...blogPosts}
+          />
         ))}
         
-        {latestPlayList?.map((post) => (
-          <div
-            key={post.blogPlaylistSlug}
-            {...post}
-            className="flex flex-col gap-2 w-full shadow-lg shadow-vault-menubar hover:shadow-vault-link transition duration-500 rounded-xl p-6"
-          >
-            <p className='text-vault-title text-4xl text-center font-title font-bold'>Playlist From Latest Show</p>
-            <Image
-              src={post.blogPlaylistImage ?? '/assets/vinyl_PNG21.png'}
-              className="block text-vault-link col-span-3 aspect-video object-fill rounded-xl grayscale hover:grayscale-0 transition duration-500 ease-in-out"
-              alt={post.blogPlaylistTitle}
-              width={1000} // 100%
-              height={1000} // 100%
-              title={post.blogPlaylistTitle}
-            />
-            <p className='text-vault-title text-2xl text-center font-title font-bold'>
-              {post.blogPlaylistTitle}
-            </p>
-            <p className='text-vault-genre text-2xl text-center font-title'>{post.blogPlaylistIntro}</p>
-            <p className='text-vault-text text-xl text-center font-title'>
-              <strong>Publish Date: </strong>
-              {post.blogPlaylistPublishDate.toUTCString()}
-            </p>
-            {post.updatedAt && (
-              <p className='text-vault-text text-xl text-center font-title'>
-                <strong>Updated Date: </strong>
-                {post.updatedAt.toUTCString()}
-              </p>
-            )}
-          </div>
+        {latestPlayList.map((showArchive) => (
+          <ShowArchiveGridItems
+            key={showArchive.blogPlaylistSlug}
+            {...showArchive}
+          />
         ))}
       </div>
     </div>

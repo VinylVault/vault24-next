@@ -9,6 +9,16 @@ export async function getLatestPlayList() {
         where: {
             blogPlaylistPublished: true
         },
+        include: {
+            userAccounts: {
+                select: {
+                    userAccountName: true,
+                    userAccountEmail: true,
+                    userAccountSlug: true
+                }
+            },
+            globalTags: true
+        },
         take: 1,
     });
     await prisma.$disconnect();
@@ -23,6 +33,16 @@ export async function getAllPlayLists() {
         where: {
             blogPlaylistPublished: true
         },
+        include: {
+            userAccounts: {
+                select: {
+                    userAccountName: true,
+                    userAccountEmail: true,
+                    userAccountSlug: true
+                }
+            },
+            globalTags: true
+        }
     });
     await prisma.$disconnect();
     return getBlogPost;

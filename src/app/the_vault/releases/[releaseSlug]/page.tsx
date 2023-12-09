@@ -65,12 +65,10 @@ export default async function TheVaultReleaseDetails({
       <h3 className="text-4xl p-4 font-bold font-title text-vault-title">
         Track Listing
       </h3> 
-      {/* <div className="grid gap-4 p-4 pb-8 md:grid-cols-4 grid-cols-1 mx-12"> */}
       {localRelease?.libraryTracks.map((track) => (
             <TrackGridItemsWithoutArt
           key={track.trackSlug} {...track} />
           ))}
         </div>
-    // </div>
   );
 }

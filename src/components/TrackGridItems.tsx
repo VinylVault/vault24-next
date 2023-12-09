@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import { formatTimeAgo } from '@/utils/formatTimeAgo';
 import Link from 'next/link';
-import { Button } from './Button';
 
 type TrackGridItemsProps = {
   trackSlug: string;
@@ -114,23 +113,23 @@ export async function TrackGridItemsWithoutArt({
   return (
     // [ | POS | TITLE                                        REQUEST LINK]
     // [ ARTISTS                                             ?LAST PLAYED?]
-    <div className="grid gap-4 p-4 md:grid-cols-4 grid-cols-1 mx-12 shadow-lg shadow-vault-menubar hover:shadow-vault-link transition duration-500 rounded-xl">
+    <div className="grid gap-8 p-4 mb-4 md:grid-cols-4 grid-cols-1 mx-12 shadow-lg shadow-vault-menubar hover:shadow-vault-link transition duration-500 rounded-xl">
       <div className="md:col-span-2">
-        <p className="text-vault-text align-left mx-2 md:my-2 text-lg">
+        <p className="text-vault-text text-left mx-2 md:my-2 text-lg">
           {!trackIsSubtrack && trackPosition && <strong className='align-middle p-2 border-2 rounded-full border-vault-border'>{trackPosition}</strong>}<span className="text-4xl align-middle items-center">{trackIsSubtrack && <span className='text-gray-500'>{'>'}</span>} {trackTitle}{' '}</span>
         </p>
-        <p className="text-vault-text align-left mx-2 text-lg">
+        <p className="text-vault-text text-left mx-2 md:my-2 text-lg">
           {!trackIsSubtrack && trackPosition && libraryArtists
             .map((artist) => artist.artistName)
             .join(', ')}
         </p>
       </div>
-      <div className="col-span-2">
+      <div className="md:col-span-2">
         <p className="text-vault-text text-right m-2 text-lg">
-          {!trackIsSubtrack && trackPosition && <Link href={`/the_vault/request/${trackSlug}`} className='text-vault-link hover:bg-vault-link hover:text-vault-background p-2 rounded-xl'>REQUEST</Link>}
-          {' '}
-          <br />{' '}
-          {!trackIsSubtrack && trackPosition && <span>Last Played: {trackLastPlayed.toDateString()}</span>}
+          {!trackIsSubtrack && trackPosition && <Link href={`/the_vault/request/${trackSlug}`} className='text-vault-link hover:bg-vault-link hover:text-vault-background p-2 rounded-xl text-2xl'>REQUEST</Link>}
+          </p>
+        <p className="text-vault-text text-right mx-2 md:my-2 text-lg">
+          {!trackIsSubtrack && trackPosition && <span>Last Played: {formatTimeAgo(trackLastPlayed)}</span>}
         </p>
       </div>
     </div>

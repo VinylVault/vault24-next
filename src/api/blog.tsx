@@ -9,10 +9,21 @@ export async function getLatestBlogPost() {
         where: {
             blogPostPublished: true
         },
+        include: {
+            userAccounts: {
+                select: {
+                    userAccountName: true,
+                    userAccountEmail: true,
+                    userAccountSlug: true
+                }
+            },
+            globalTags: true
+        },
         take: 1,
     });
+    console.log(getBlogPost);
     await prisma.$disconnect();
-    return getBlogPost;
+    return getBlogPost; 
 }
 
 export async function getAllBlogPosts() {
@@ -23,7 +34,18 @@ export async function getAllBlogPosts() {
         where: {
             blogPostPublished: true
         },
+        include: {
+            userAccounts: {
+                select: {
+                    userAccountName: true,
+                    userAccountEmail: true,
+                    userAccountSlug: true
+                }
+            },
+            globalTags: true
+        },
     });
+    console.log(getBlogPost);
     await prisma.$disconnect();
     return getBlogPost;
 }
