@@ -64,7 +64,7 @@ model blogPAPlaylistItems {
 model blogPlaylist {
   blogPlaylistTitle       String            @db.VarChar(128)
   blogPlaylistIntro       String            @db.VarChar(1024)
-  blogPlaylistImage       String?           @db.VarChar(1024)
+  blogPlaylistImage       String           @db.VarChar(1024)
   blogPlayListSMImage     String?           @db.VarChar(1024)
   blogPlayListListenAgain String?           @db.VarChar(512)
   viewCounter             Int               @default(0)
@@ -84,7 +84,7 @@ model blogPlaylist {
 model blogPost {
   blogPostTitle       String                @db.VarChar(128)
   blogPostIntro       String                @db.VarChar(1024)
-  blogPostImage       String?               @db.VarChar(1024)
+  blogPostImage       String               @db.VarChar(1024)
   blogPostSMImage     String?               @db.VarChar(1024)
   blogPostContent     String?               @db.VarChar(20480)
   viewCounter         Int                   @default(0)
@@ -132,6 +132,7 @@ model bookedShows {
 
 model globalTags {
   tagSlug      String         @id @unique @db.VarChar(512)
+  tag          String         @db.VarChar(512)
   createdAt    DateTime       @default(now()) @db.Timestamptz(6)
   updatedAt    DateTime       @default(now()) @db.Timestamptz(6)
   blogPlaylist blogPlaylist[]
