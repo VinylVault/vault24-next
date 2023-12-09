@@ -11,7 +11,6 @@ type TrackGridItemsProps = {
   trackIsSubtrack: boolean;
   trackLastPlayed: Date;
   libraryArtists: TrackArtistProps[];
-  libraryReleases: TrackReleaseProps[];
 }
 
 type RequestTrackGridItemsProps = {
@@ -65,7 +64,7 @@ export async function TrackGridItemsWithArt({
   trackPosition,
   trackIsSubtrack,
   libraryArtists,
-  libraryReleases
+  // libraryReleases
 }: TrackGridItemsProps) {
   return (
     // [ [---------]  POS : TITLE                                   REQUEST LINK]
@@ -111,7 +110,6 @@ export async function TrackGridItemsWithoutArt({
   trackIsSubtrack,
   trackLastPlayed,
   libraryArtists,
-  libraryReleases
 }: TrackGridItemsProps) {
   return (
     // [ | POS | TITLE                                        REQUEST LINK]
