@@ -3,6 +3,6 @@ const prisma = new PrismaClient()
 
 export async function getShelves() {
   const getShelfList = await prisma.libraryGenres.findMany()
-  prisma.$disconnect()
+  await prisma.$disconnect()
   return getShelfList
 }

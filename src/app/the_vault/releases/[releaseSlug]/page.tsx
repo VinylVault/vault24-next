@@ -1,4 +1,5 @@
 import { getOneRelease } from '@/api/releases';
+import { TrackGridItemsWithoutArt } from '@/components/TrackGridItems';
 import { Button } from '@/components/Button';
 import Image from 'next/image';
 export default async function TheVaultReleaseDetails({
@@ -63,33 +64,13 @@ export default async function TheVaultReleaseDetails({
       </div>
       <h3 className="text-4xl p-4 font-bold font-title text-vault-title">
         Track Listing
-      </h3>
-      <div className="grid gap-4 md:grid-cols-4 pb-8 grid-cols-1 mx-12">
-        {localRelease?.libraryTracks.map((track) => (
-          <>
-            <div className="md:col-span-2">
-              <p className="text-vault-text align-left mx-2 md:my-2 text-lg">
-                <strong>{track.trackPosition} </strong> {track.trackTitle}{' '}
-                <br />{' '}
-                {track.libraryArtists
-                  .map((artist) => artist.artistName)
-                  .join(', ')}
-              </p>
-            </div>
-            <div className="col=span-1">
-              <p className="text-vault-text align-left mx-2 md:my-2 text-lg">
-                Last Played: <br />
-                {track.trackLastPlayed.toDateString()}
-              </p>
-            </div>
-            <div className="col=span-1">
-              <p className="text-vault-text align-left mx-2 md:my-2 text-lg">
-                REQUEST
-              </p>
-            </div>
-          </>
-        ))}
-      </div>
-    </div>
+      </h3> 
+      {/* <div className="grid gap-4 p-4 pb-8 md:grid-cols-4 grid-cols-1 mx-12"> */}
+      {localRelease?.libraryTracks.map((track) => (
+            <TrackGridItemsWithoutArt
+          key={track.trackSlug} {...track} />
+          ))}
+        </div>
+    // </div>
   );
 }

@@ -11,15 +11,7 @@
   "dependencies": {
     "@geist-ui/core": "^2.3.8",
     "@prisma/client": "^5.7.0",
-    "@twurple/api": "^7.0.6",
-    "@twurple/auth": "^7.0.6",
-    "@twurple/chat": "^7.0.6",
-    "@twurple/easy-bot": "^7.0.6",
-    "@twurple/eventsub-http": "^7.0.6",
-    "@twurple/eventsub-ws": "^7.0.6",
-    "@twurple/pubsub": "^7.0.6",
     "class-variance-authority": "^0.7.0",
-    "fs-extra": "^11.2.0",
     "gray-matter": "^4.0.3",
     "image-downloader": "^4.3.0",
     "lucide-react": "^0.292.0",
@@ -33,6 +25,7 @@
     "tailwind-merge": "^2.0.0"
   },
   "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

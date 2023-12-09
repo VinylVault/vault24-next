@@ -25,7 +25,7 @@ export async function getAllArtists() {
       artistSortName: 'asc',
     },
   });
-  prisma.$disconnect();
+  await prisma.$disconnect();
   return getArtists;
 }
 
@@ -72,6 +72,6 @@ export async function getOneArtist(artistSlug: string) {
     },
   });
   // console.log(getArtistDetails);
-  prisma.$disconnect();
+  await prisma.$disconnect();
   return getArtistDetails;
 }

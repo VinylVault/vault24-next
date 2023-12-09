@@ -36,7 +36,7 @@ export function ReleaseGridItems({
     releaseIsNewAddition
 }: ReleaseGridItemsProps) {
     return(
-        <>
+        // <>
         <div className="flex flex-col items-middle gap-2 w-full shadow-lg shadow-vault-menubar hover:shadow-vault-link transition duration-500 rounded-xl">
             <Link href={`/the_vault/releases/${releaseSlug}`} className="relative aspect-square w-full rounded-xl overflow-hidden ">
                 <Image 
@@ -63,6 +63,6 @@ export function ReleaseGridItems({
             </div>
                     
         </div>
-        </>
+        // </>
     )
 }

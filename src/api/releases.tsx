@@ -32,7 +32,7 @@ export async function getRecentReleases() {
     take: 50,
   });
   // console.log(getRecentReleases);
-  prisma.$disconnect()
+  await prisma.$disconnect()
   return getRecentReleases;
 }
 
@@ -66,7 +66,7 @@ export async function getAllReleases() {
     },
   });
   // console.log(getReleaseList);
-  prisma.$disconnect()
+  await prisma.$disconnect()
   return getReleaseList;
 }
 
@@ -83,6 +83,7 @@ export async function getOneRelease(releaseSlug:string) {
       libraryTracks: {
         include: {
           libraryArtists: true,
+          libraryReleases: true,
         },
       }
     },
@@ -91,6 +92,6 @@ export async function getOneRelease(releaseSlug:string) {
     },
   });
   // console.log(getReleaseDetails);
-  prisma.$disconnect()
+  await prisma.$disconnect()
   return getReleaseDetails;
 }

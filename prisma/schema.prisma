@@ -361,7 +361,7 @@ model trackPlanning {
   requestedBy     String?           @db.VarChar(256)
   requestedFor    String?           @db.VarChar(256)
   requestMessage  String?           @db.VarChar(512)
-  trackPlayed     TrackStatus       @default(Listed)
+  trackPlayed     RequestStatus       @default(Requested)
   libraryTracks   libraryTracks[]
   trackOnPlaylist trackOnPlaylist[]
 }
@@ -417,9 +417,16 @@ enum FeatureType {
 }
 
 enum TrackStatus {
+  Requested
   Played
   Current
   Next
   Listed
+  Rejected
+}
+
+enum RequestStatus {
+  Requested
+  Added_To_Playlist
   Rejected
 }

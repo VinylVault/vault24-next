@@ -1,12 +1,16 @@
 import Image from 'next/image';
-import { getAllPlayLists } from '@/api/playlist';
+import { getOnePlaylist } from '@/api/playlist';
 import { Metadata } from 'next';
 
 export const dynamic = 'force-dynamic';
 
-export default async function ShowArchiveList() {
+export default async function ShowArchiveList({
+    params,
+  }: {
+    params: { blogPlaylistSlug: string };
+  }) {
 
-    let localPlaylists = await getAllPlayLists();
+    let localPlaylists = await getOnePlaylist(params.blogPlaylistSlug);
     console.log(localPlaylists)
 
     return (

@@ -20,15 +20,15 @@ export function ArtistGridItems({
   return (
     <>
       {artistLibrary && (
-        <div className="flex flex-col gap-2 w-full shadow-lg shadow-vault-menubar hover:shadow-vault-link transition duration-500 rounded-xl">
+        <div className=" flex flex-col gap-2 w-full shadow-lg shadow-vault-menubar hover:shadow-vault-link transition duration-500 rounded-xl">
           <Link
             href={`/the_vault/artists/${artistSlug}`}
-            className="relative aspect-square align-middle px-4 py-2 w-full rounded-xl overflow-hidden text-vault-link text-xl text-center"
+            className="relative align-middle content-middle py-auto font-title px-4 py-2 w-full rounded-xl overflow-hidden text-vault-link text-4xl text-center"
           >
             {artistName}
           </Link>
 
-          <div className="flex flex-col">
+          <div className="flex flex-col align-bottom content-bottom bottom">
             <p className="text-vault-text mx-2 mb-1 font-title text-lg">
               <strong>Releases: </strong>
               {artistReleaseQuantity}
