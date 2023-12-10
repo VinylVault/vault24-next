@@ -195,9 +195,9 @@ export async function PlaylistTrackGridItems({
           )}
         </p>
         <p className="text-vault-text text-right mx-2 md:my-2 text-lg">
-          {!trackIsSubtrack && trackPosition && trackLastPlayed > createdAt && (
+          {/* {!trackIsSubtrack && trackPosition && trackLastPlayed > createdAt && (
             <span>Last Played: {formatTimeAgo(trackLastPlayed)}</span>
-          )}
+          )} */}
         </p>
       </div>
     </div>
