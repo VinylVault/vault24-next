@@ -1,6 +1,7 @@
 import { getOneArtist } from '@/api/artists';
 import { Button } from '@/components/Button';
 import { ReleaseGridItems } from '@/components/ReleaseGridItems';
+import { TrackGridItemsWithArt } from '@/components/TrackGridItems';
 import Image from 'next/image';
 import Link from 'next/link';
 export default async function TheVaultReleaseDetails({
@@ -39,22 +40,10 @@ export default async function TheVaultReleaseDetails({
       </h4>
       <div>
         {localArtist?.libraryTracks.map((track) => (
-          <>
-            <p
-              className="text-vault-text mx-2 mb-1 text-lg"
-              key={track.trackSlug}
-            >
-              <strong>Track Title:</strong> {track.trackTitle}
-            </p>
-            {track.libraryArtists.map((artist) => (
-              <p
-                className="text-vault-text mx-2 mb-1 text-lg"
-                key={artist.artistSlug}
-              >
-                <strong>Track Artist:</strong> {artist.artistName}
-              </p>
-            ))}
-          </>
+          <TrackGridItemsWithArt
+          key={track.trackSlug}
+          {...track}
+          />
         ))}
       </div>
     </div>
