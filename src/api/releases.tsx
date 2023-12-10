@@ -85,6 +85,9 @@ export async function getOneRelease(releaseSlug:string) {
           libraryArtists: true,
           libraryReleases: true,
         },
+        orderBy: {
+          trackSlug: 'asc',
+        }
       }
     },
     where: {
