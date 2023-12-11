@@ -1,11 +1,11 @@
-export default function LegalPrivacyPolicy() {
+export default function LegalGDPRPolicy() {
   return (
     <div className="flex min-h-screen flex-col p-12 bg-vault-background">
-      <h2 className="text-8xl font-bold text-center font-title text-vault-genre">
-        Our Privacy Policy
+      <h2 className="text-6xl font-bold font-title text-vault-genre text-center">
+        Our GDPR Policy
       </h2>
-      <h3 className="text-4xl font-bold text-center font-title text-vault-title">
-        TLDR: We Will Never Share Your Data
+      <h3 className="text-4xl font-bold font-title text-vault-title text-center">
+        How We Protect Your Data
       </h3>
 
       <h3 className="text-vault-text font-bold text-2xl py-4">Who we are</h3>
@@ -27,9 +27,11 @@ export default function LegalPrivacyPolicy() {
         VINYL VAULT SHOW&apos;s (TVVS) data protection standards; and to comply
         with the law in compliance with the GDPR legislation of May 2018.
       </p>
-      <h3 className="text-vault-text font-bold text-2xl py-4">Why This Policy Exists</h3>
+      <h3 className="text-vault-text font-bold text-2xl py-4">
+        Why This Policy Exists
+      </h3>
       <p className="text-vault-text text-xl px-4 py-2">
-        This privacy policy ensures THE VINYL VAULT SHOW:
+        This privacy policy ensures The Vinyl Vault Show:
       </p>
       <ul>
         <li>
@@ -53,17 +55,16 @@ export default function LegalPrivacyPolicy() {
           </p>
         </li>
       </ul>
-      <h3 className="text-vault-text font-bold text-2xl py-4">Data Protection Law</h3>
+      <h3 className="text-vault-text font-bold text-2xl py-4">
+        Data Protection Law
+      </h3>
       <p className="text-vault-text text-xl px-4 py-2">
-        These rules apply regardless of whether data is stored electronically,
-        on paper or on other materials.
-      </p>
-      <p className="text-vault-text text-xl px-4 py-2">
-        To comply with the law, personal information must be collected and used
-        fairly, stored safely and not disclosed unlawfully.
-      </p>
-      <p className="text-vault-text text-xl px-4 py-2">
-        THE VINYL VAULT SHOW ensures that personal information is:
+        GDPR describes how organisations, including The Vinyl Vault Show, must
+        collect, handle and store personal information. These rules apply
+        regardless of whether data is stored electronically, on paper or on
+        other materials. To comply with the law, personal information must be
+        collected and used fairly, stored safely and not disclosed unlawfully.
+        The Vinyl Vault Show ensures that personal information is:
       </p>
       <ul>
         <li>
@@ -116,16 +117,15 @@ export default function LegalPrivacyPolicy() {
       <ul>
         <li>
           <p className="text-vault-text text-xl px-16 py-2">
-            THE VINYL VAULT SHOW website
+            The Vinyl Vault Show website
           </p>
         </li>
       </ul>
       <p className="text-vault-text text-xl px-4 py-2">
-        It applies to all data that THE VINYL VAULT SHOW holds relating to
+        It applies to all data that The Vinyl Vault Show holds relating to
         identifiable individuals, even if that information technically falls
-        outside of GDPR.
+        outside of GDPR. This can include:
       </p>
-      <p className="text-vault-text text-xl px-4 py-2">This can include:</p>
       <ul>
         <li>
           <p className="text-vault-text text-xl px-16 py-2">
@@ -149,7 +149,9 @@ export default function LegalPrivacyPolicy() {
           </p>
         </li>
       </ul>
-      <h3 className="text-vault-text font-bold text-2xl py-4">Data Protection Risks</h3>
+      <h3 className="text-vault-text font-bold text-2xl py-4">
+        Data Protection Risks
+      </h3>
       <p className="text-vault-text text-xl px-4 py-2">
         This policy helps to protect GDPR.co.uk from some very real data
         security risks, including:
@@ -158,46 +160,38 @@ export default function LegalPrivacyPolicy() {
         <li>
           <p className="text-vault-text text-xl px-16 py-2">
             Breaches of confidentiality. (For instance, information being given
-            out inappropriately by THE VINYL VAULT SHOW`).
+            out inappropriately by The Vinyl Vault Show`).
           </p>
         </li>
         <li>
           <p className="text-vault-text text-xl px-16 py-2">
             Failing to offer choice. (For instance, all individuals should be
-            free to choose how THE VINYL VAULT SHOW uses data relating to them).
+            free to choose how The Vinyl Vault Show uses data relating to them).
           </p>
         </li>
         <li>
           <p className="text-vault-text text-xl px-16 py-2">
-            Reputational Damage (For instance, THE VINYL VAULT SHOW contacts
+            Reputational Damage (For instance, The Vinyl Vault Show contacts
             could suffer if hackers gained access to sensitive data held by the
             company).
           </p>
         </li>
       </ul>
-      <h3 className="text-vault-text font-bold text-2xl py-4">Responsibilities:</h3>
+      <h3 className="text-vault-text font-bold text-2xl py-4">
+        Responsibilities:
+      </h3>
       <p className="text-vault-text text-xl px-4 py-2">
-        Everyone who works for, or with THE VINYL VAULT SHOW, has some
+        Everyone who works for, or with The Vinyl Vault Show, has some
         responsibility for ensuring that data is collected, stored and handled
-        appropriately.
-      </p>
-      <p className="text-vault-text text-xl px-4 py-2">
-        Everyone that handles personal data must ensure that it is handled and
-        processed in line with this policy and data protection principles.
-      </p>
-      <p className="text-vault-text text-xl px-4 py-2">
-        However, these people (if applicable) have key areas of responsibility:
+        appropriately. Everyone that handles personal data must ensure that it
+        is handled and processed in line with this policy and data protection
+        principles. However, these people (if applicable) have key areas of
+        responsibility:
       </p>
       <ul>
         <li>
           <p className="text-vault-text text-xl px-16 py-2">
-            The board of directors is ultimately responsible for ensuring that
-            THE VINYL VAULT SHOW meets its legal obligations.
-          </p>
-        </li>
-        <li>
-          <p className="text-vault-text text-xl px-16 py-2">
-            THE VINYL VAULT SHOW Data Protection Officer is responsible for:
+            The Vinyl Vault Show Data Protection Officer is responsible for:
             <ul>
               <li>
                 <p className="text-vault-text text-xl px-8 py-2">
@@ -235,7 +229,7 @@ export default function LegalPrivacyPolicy() {
         </li>
         <li>
           <p className="text-vault-text text-xl px-16 py-2">
-            THE VINYL VAULT SHOW Head of Technology is responsible for:
+            The Vinyl Vault Show Head of Technology is responsible for:
             <ul>
               <li>
                 <p className="text-vault-text text-xl px-8 py-2">
@@ -254,7 +248,7 @@ export default function LegalPrivacyPolicy() {
         </li>
         <li>
           <p className="text-vault-text text-xl px-16 py-2">
-            THE VINYL VAULT SHOW Marketing Manager is responsible for:
+            The Vinyl Vault Show Marketing Manager is responsible for:
             <ul>
               <li>
                 <p className="text-vault-text text-xl px-8 py-2">
@@ -274,7 +268,7 @@ export default function LegalPrivacyPolicy() {
         </li>
       </ul>
       <h3 className="text-vault-text font-bold text-2xl py-4">
-        <strong>General Guidelines</strong>
+        General Guidelines
       </h3>
       <p className="text-vault-text text-xl px-4 py-2">
         The only people able to access data covered by this policy should be
@@ -290,7 +284,7 @@ export default function LegalPrivacyPolicy() {
         </li>
         <li>
           <p className="text-vault-text text-xl px-16 py-2">
-            THE VINYL VAULT SHOW will provide training to all employees to help
+            The Vinyl Vault Show will provide training to all employees to help
             them understand their responsibilities when handling data.
           </p>
         </li>
@@ -327,9 +321,36 @@ export default function LegalPrivacyPolicy() {
           </p>
         </li>
       </ul>
-      <h3 className="text-vault-text font-bold text-2xl py-4">
-        <strong>Data Storage</strong>
-      </h3>
+      <h3 className="text-vault-text font-bold text-2xl py-4">Data Storage</h3>
+      <p className="text-vault-text text-xl px-4 py-2">
+        These rules describe how and where data should be safely stored.
+        Questions about storing data safely can be directed to the IT manager or
+        Data Controller. When data is stored on paper, it should be kept in a
+        secure (locked) place where unauthorised people cannot see it These
+        guidelines also apply to data that is usually stored electronically but
+        has been printed out for some reason:
+      </p>
+      <ul>
+        <li>
+          <p className="text-vault-text text-xl px-16 py-2">
+            When not required, the paper or files should be kept in a locked
+            drawer or filing cabinet.
+          </p>
+        </li>
+        <li>
+          <p className="text-vault-text text-xl px-16 py-2">
+            Employees should make sure paper and printouts are not left where
+            unauthorised people could see them, like on a printer or an in/out
+            tray.
+          </p>
+        </li>
+        <li>
+          <p className="text-vault-text text-xl px-16 py-2">
+            Data printouts should be shredded and disposed of securely when no
+            longer required.
+          </p>
+        </li>
+      </ul>
       <p className="text-vault-text text-xl px-4 py-2">
         When data is stored electronically, it must be protected from
         unauthorised access, accidental deletion and malicious hacking attempts:
@@ -357,7 +378,7 @@ export default function LegalPrivacyPolicy() {
         <li>
           <p className="text-vault-text text-xl px-16 py-2">
             Data should be backed up frequently. Backups should be tested
-            regularly, in line with the THE VINYL VAULT SHOW standard backup
+            regularly, in line with the The Vinyl Vault Show standard backup
             procedures.
           </p>
         </li>
@@ -374,12 +395,150 @@ export default function LegalPrivacyPolicy() {
           </p>
         </li>
       </ul>
+      <h3 className="text-vault-text font-bold text-2xl py-4">Data Use</h3>
+      <p className="text-vault-text text-xl px-4 py-2">
+        Personal data is of no value to The Vinyl Vault Show unless the business
+        can make use of it. However, it is when personal data is accessed and
+        used that it can be at the greatest risk of loss, corruption or theft:
+      </p>
+      <ul>
+        <li>
+          <p className="text-vault-text text-xl px-16 py-2">
+            When working with personal data employees should ensure the screens
+            of their computers are always locked when left unattended.
+          </p>
+        </li>
+        <li>
+          <p className="text-vault-text text-xl px-16 py-2">
+            Personal data should not be shared informally. In particular it
+            should never be sent by email, as this form of communication is not
+            secure.
+          </p>
+        </li>
+        <li>
+          <p className="text-vault-text text-xl px-16 py-2">
+            Data must be encrypted before being transferred electronically.
+          </p>
+        </li>
+        <li>
+          <p className="text-vault-text text-xl px-16 py-2">
+            Employees should not save copies of personal data to their own
+            computers; this is a breach. Always access and update the central
+            copy of any data.
+          </p>
+        </li>
+      </ul>
+      <h3 className="text-vault-text font-bold text-2xl py-4">Data Accuracy</h3>
+      <p className="text-vault-text text-xl px-4 py-2">
+        The law requires The Vinyl Vault Show to take reasonable steps to ensure
+        data is kept accurate and up to date. The more important it is that the
+        personal data is accurate, the greater the effort The Vinyl Vault Show
+        should put into ensuring its accuracy. It is the responsibility of all
+        employees who work with data to take reasonable steps to ensure it is
+        kept as accurate and up to date as possible.
+      </p>
+      <ul>
+        <li>
+          <p className="text-vault-text text-xl px-16 py-2">
+            Data will be held in as few places as necessary. Staff should not
+            create any unnecessary additional data sets.
+          </p>
+        </li>
+        <li>
+          <p className="text-vault-text text-xl px-16 py-2">
+            Staff should take every opportunity to ensure data is updated. For
+            instance, by confirming a customers details when they call.
+          </p>
+        </li>
+        <li>
+          <p className="text-vault-text text-xl px-16 py-2">
+            The Vinyl Vault Show will make it easy for individuals to update the
+            information The Vinyl Vault Show hold about them. For instance, via
+            the company website.
+          </p>
+        </li>
+        <li>
+          <p className="text-vault-text text-xl px-16 py-2">
+            Data should be updated as inaccuracies are discovered. For instance,
+            if a customer can no longer be reached on their stored telephone
+            number, it should be removed from the database.
+          </p>
+        </li>
+      </ul>
+      <h3 className="text-vault-text font-bold text-2xl py-4">
+        Subject Access Requests
+      </h3>
+      <p className="text-vault-text text-xl px-4 py-2">
+        All individuals who are the subject of personal data held by The Vinyl
+        Vault Show are entitled to:
+      </p>
+      <ul>
+        <li>
+          <p className="text-vault-text text-xl px-16 py-2">
+            Ask what information the company holds about them and why.
+          </p>
+        </li>
+        <li>
+          <p className="text-vault-text text-xl px-16 py-2">
+            Ask how to gain access to it.
+          </p>
+        </li>
+        <li>
+          <p className="text-vault-text text-xl px-16 py-2">
+            Be informed how to keep it up to date.
+          </p>
+        </li>
+      </ul>
+      <p className="text-vault-text text-xl px-4 py-2">
+        If an individual contacts the The Vinyl Vault Show requesting this
+        information, this is called a subject access request. Subject access
+        requests from individuals should ideally be made by email, addressed to
+        studio@thevinylvaultshow.co.uk,. The Vinyl Vault Show can supply a
+        standard request form. Individuals will be charged £25 per subject
+        access request. The Vinyl Vault Show will aim to provide the relevant
+        data within 40 days. The Vinyl Vault Show will always verify the
+        identity of anyone making a subject access request before handing over
+        any information.
+      </p>
+      <h3 className="text-vault-text font-bold text-2xl py-4">
+        Disclosing Data For Other Reasons
+      </h3>
+      <p className="text-vault-text text-xl px-4 py-2">
+        In certain circumstances, the GDPR allows personal data to be disclosed
+        to law enforcement agencies without the consent of the data subject.
+        Under these circumstances, The Vinyl Vault Show will disclose requested
+        data. However, The Vinyl Vault Show will ensure the request is
+        legitimate, seeking assistance from our legal advisers where necessary.
+      </p>
+      <h3 className="text-vault-text font-bold text-2xl py-4">
+        Providing Information
+      </h3>
+      <p className="text-vault-text text-xl px-4 py-2">
+        The Vinyl Vault Show aims to ensure that individuals are aware that
+        their data is being processed, and that they understand:
+      </p>
+      <ul>
+        <li>
+          <p className="text-vault-text text-xl px-16 py-2">
+            How the data is being used
+          </p>
+        </li>
+        <li>
+          <p className="text-vault-text text-xl px-16 py-2">
+            How to exercise their rights
+          </p>
+        </li>
+      </ul>
+      <p className="text-vault-text text-xl px-4 py-2">
+        To these ends, The Vinyl Vault Show has a privacy statement, setting out
+        how data relating to individuals is used by the company.
+      </p>
       <p className="text-vault-text text-xl px-4 py-2">
         TVVS is committed to respecting your privacy and to complying with
         applicable data protection and privacy laws (GDPR).
       </p>
       <p className="text-vault-text text-lg font-bold pt-6">
-        Internal Document Reference Number : TVVS / LEGAL / PRIVACY POLICY
+        Internal Document Reference Number : TVVS / LEGAL / GDPR POLICY
       </p>
       <p className="text-vault-text text-lg font-bold">
         Date Of Last Update : 01 January 2024
