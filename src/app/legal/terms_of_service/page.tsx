@@ -328,7 +328,7 @@ export default function LegalTermsOfService() {
         or damage of any nature.
       </p>
       <p className="text-vault-text text-lg font-bold pt-6">
-        Internal Document Reference Number : TVVS / LEGAL / WEBSITE TERMS OF SERVICE
+        Internal Document Reference : TVVS / LEGAL / WEBSITE TERMS OF SERVICE
       </p>
       <p className="text-vault-text text-lg font-bold">
         Date Of Last Update : 01 January 2024

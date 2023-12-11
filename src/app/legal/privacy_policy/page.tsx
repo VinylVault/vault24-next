@@ -379,7 +379,7 @@ export default function LegalPrivacyPolicy() {
         applicable data protection and privacy laws (GDPR).
       </p>
       <p className="text-vault-text text-lg font-bold pt-6">
-        Internal Document Reference Number : TVVS / LEGAL / PRIVACY POLICY
+        Internal Document Reference : TVVS / LEGAL / PRIVACY POLICY
       </p>
       <p className="text-vault-text text-lg font-bold">
         Date Of Last Update : 01 January 2024
