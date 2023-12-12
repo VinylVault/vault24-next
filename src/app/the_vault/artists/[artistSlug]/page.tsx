@@ -12,6 +12,7 @@ export default async function TheVaultReleaseDetails({
   // console.log(params)
 
   const localArtist = await getOneArtist(params.artistSlug);
+  // console.log(localArtist);
 
   return (
     <div className="flex min-h-screen flex-col p-12 bg-vault-background">
@@ -40,10 +41,7 @@ export default async function TheVaultReleaseDetails({
       </h4>
       <div>
         {localArtist?.libraryTracks.map((track) => (
-          <TrackGridItemsWithArt
-          key={track.trackSlug}
-          {...track}
-          />
+          <TrackGridItemsWithArt key={track.trackSlug} {...track} />
         ))}
       </div>
     </div>

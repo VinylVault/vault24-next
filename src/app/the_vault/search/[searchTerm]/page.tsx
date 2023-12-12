@@ -62,11 +62,9 @@ export default async function SearchResults({
             >
               Tracks:
             </h4>
-            {/* <div className="grid gap-4 md:grid-cols-4 pb-8 grid-cols-1 mx-auto border-b-2 border-vault-border"> */}
             {trackSearchResults.map((track) => (
               <TrackGridItemsWithArt key={track.trackSlug} {...track} />
             ))}
-            {/* </div> */}
           </>
         )}
       </div>

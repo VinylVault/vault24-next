@@ -6,6 +6,22 @@ export async function SearchReleases(searchTerm: string) {
   console.log(searchTerm);
   const searchResults = await prisma.libraryReleases.findMany({
     where: {
+      AND: [
+        {
+          libraryShelves: {
+            some: {
+              shelfPrivate: false,
+            },
+          },
+        },
+        {
+          libraryShelves: {
+            some: {
+              shelfWantlist: false,
+            },
+          },
+        },
+      ],
       releaseSlug: {
         contains: searchTerm,
         mode: 'insensitive',
@@ -57,6 +73,30 @@ export async function SearchTracks(searchTerm: string) {
         contains: searchTerm,
         mode: 'insensitive',
       },
+      AND: [
+        {
+          libraryReleases: {
+            some: {
+              libraryShelves: {
+                some: {
+                  shelfPrivate: false,
+                },
+              },
+            },
+          },
+        },
+        {
+          libraryReleases: {
+            some: {
+              libraryShelves: {
+                some: {
+                  shelfWantlist: false,
+                },
+              },
+            },
+          },
+        },
+      ],
     },
     orderBy: {
       _relevance: {
