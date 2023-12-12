@@ -2,21 +2,25 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 export async function SearchReleases(searchTerm: string) {
-  searchTerm = searchTerm.replace('%20', ' ');
+  searchTerm = searchTerm.replace('%20', '_');
   console.log(searchTerm);
   const searchResults = await prisma.libraryReleases.findMany({
     where: {
-      releaseTitle: {
+      releaseSlug: {
         contains: searchTerm,
         mode: 'insensitive',
       },
     },
     orderBy: {
       _relevance: {
-        fields: ['releaseTitle'],
+        fields: ['releaseSlug'],
         search: searchTerm,
         sort: 'asc',
       },
+    },
+    include: {
+      libraryArtists: true,
+      libraryShelves: true,
     },
   });
   //   console.log(searchResults);
@@ -28,14 +32,14 @@ export async function SearchArtists(searchTerm: string) {
   //   console.log(searchTerm);
   const searchResults = await prisma.libraryArtists.findMany({
     where: {
-      artistName: {
+      artistSlug: {
         contains: searchTerm,
         mode: 'insensitive',
       },
     },
     orderBy: {
       _relevance: {
-        fields: ['artistName'],
+        fields: ['artistSlug'],
         search: searchTerm,
         sort: 'desc',
       },
@@ -49,17 +53,21 @@ export async function SearchTracks(searchTerm: string) {
   searchTerm = searchTerm.replace('%20', ' ');
   const searchResults = await prisma.libraryTracks.findMany({
     where: {
-      trackTitle: {
+      trackSlug: {
         contains: searchTerm,
         mode: 'insensitive',
       },
     },
     orderBy: {
       _relevance: {
-        fields: ['trackTitle'],
+        fields: ['trackSlug'],
         search: searchTerm,
         sort: 'asc',
       },
+    },
+    include: {
+      libraryArtists: true,
+      libraryReleases: true,
     },
   });
   //   console.log(searchResults);
