@@ -2,16 +2,15 @@ import { ArrowLeft, Bell, Menu, Search, User } from 'lucide-react';
 import { Button } from '@/components/Button';
 import { useState } from 'react';
 import { useSidebarContext } from '@/contexts/SidebarContext';
-import { Router } from 'next/router';
+
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-// import { Link } from "react-router-dom"
 
 export function PageHeader() {
   const [showFullWidthSearch, setShowFullWidthSearch] = useState(false);
-  const [inputValue, setInputValue] = useState('');
-  const handleChange = (event: any) => {
-    setInputValue(event.target.value);
-  };
+  const [input, searchInput] = useState('');
+  const router = useRouter();
+
   return (
     <div className="flex gap-5 lg:gap-20 justify-between bg-vault-menubar pt-2 pb-2 px-2 border-b-2 border-vault-border">
       <PageHeaderFirstSection hidden={false} />
@@ -27,20 +26,18 @@ export function PageHeader() {
         )}
         <div className="flex flex-grow max-w-[100%]">
           <input
-            name="searchText"
-            id="searchText"
             type="text"
-            onChange={handleChange}
+            onChange={(e) => searchInput(e.target.value)}
             placeholder="Search The Vinyl Vault"
             className="w-full bg-vault-background text-vault-text p-2 rounded-l-full  border py-1 px-4 text-lg border-vault-link focus:bg-white focus:text-black outline-none"
           />
+
           <Button
-            type="submit"
             size="icon"
             className="py-2 px-4 rounded-r-full rounded-l-none border-vault-link  border border-l-0 flex-shrink-0"
             aria-label="Search The Vinyl Vault"
           >
-            <Link href={`/the_vault/search/${inputValue}`}>
+            <Link href={`/the_vault/search/${input}`}>
               <Search />
             </Link>
           </Button>
