@@ -13,7 +13,7 @@ type radioStationProps = {
   radioStationDetailsSlug: string;
 };
 
-export async function RadioStationDisplay({
+async function RadioStationDisplay({
   radioStationDetailsName,
   radioStationDetailsURL,
   radioStationDetailsSlug,
