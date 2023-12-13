@@ -107,6 +107,17 @@ export default async function ShowArchiveList({
       {localPlaylists?.blogPlayListListenAgain}
       {localPlaylists?.trackOnPlaylist.map((trackList) => (
         <div key={trackList.trackOnPlaylistId} {...trackList}>
+          {trackList.trackPlanning.length > 0 && (
+            <p className="bg-vault-menubar text-vault-live text-xl px-8 font-bold text-center mx-12 rounded-t-xl">
+              LISTENER REQUEST
+            </p>
+          )}
+
+          {trackList.trackFeature && trackList.trackPlanning.length == 0 && (
+            <p className="bg-vault-menubar text-vault-title text-xl px-8 font-bold text-center mx-12 rounded-t-xl">
+              {trackList.trackFeature.replace(/_/g, ' ').toUpperCase()}
+            </p>
+          )}
           {trackList.libraryTracks.map((track) => (
             <TrackGridItemsWithArt key={track.trackSlug} {...track} />
           ))}
