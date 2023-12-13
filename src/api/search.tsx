@@ -44,7 +44,7 @@ export async function SearchReleases(searchTerm: string) {
 }
 
 export async function SearchArtists(searchTerm: string) {
-  searchTerm = searchTerm.replace('%20', ' ');
+  searchTerm = searchTerm.replace('%20', '_');
   //   console.log(searchTerm);
   const searchResults = await prisma.libraryArtists.findMany({
     where: {

@@ -34,13 +34,6 @@ export async function getOneArtist(artistSlug: string) {
   const getArtistDetails = await prisma.libraryArtists.findUnique({
     include: {
       libraryReleases: {
-        where: {
-          libraryShelves: {
-            some: {
-              shelfPrivate: false,
-            },
-          },
-        },
         include: {
           libraryShelves: true,
           libraryArtists: true,
@@ -52,19 +45,11 @@ export async function getOneArtist(artistSlug: string) {
       libraryTracks: {
         include: {
           libraryArtists: true,
-          libraryReleases: {
-            where: {
-              libraryShelves: {
-                some: {
-                  shelfPrivate: false,
-                },
-              },
-            },
-          },
+          libraryReleases: true,
         },
         orderBy: {
-            trackTitle: 'asc',
-        }
+          trackTitle: 'asc',
+        },
       },
     },
     where: {
