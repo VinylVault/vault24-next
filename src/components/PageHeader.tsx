@@ -12,7 +12,7 @@ export function PageHeader() {
   const router = useRouter();
 
   return (
-    <div className="flex gap-5 lg:gap-20 justify-between bg-vault-menubar pt-2 pb-2 px-2 border-b-2 border-vault-border">
+    <div className="flex sticky gap-5 lg:gap-20 justify-between bg-vault-menubar pt-2 pb-2 px-2 border-b-2 border-vault-border">
       <PageHeaderFirstSection hidden={false} />
       <form
         className={`gap-4 flex-grow justify-center" ${
@@ -27,6 +27,7 @@ export function PageHeader() {
         <div className="flex flex-grow max-w-[100%]">
           <input
             type="text"
+            value={input}
             onChange={(e) => searchInput(e.target.value)}
             placeholder="Search The Vinyl Vault"
             className="w-full bg-vault-background text-vault-text p-2 rounded-l-full  border py-1 px-4 text-lg border-vault-link focus:bg-white focus:text-black outline-none"

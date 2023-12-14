@@ -201,11 +201,11 @@ export default function OnAir() {
           <p className="text-vault-text mx-8 mb-1 text-lg">
             Of course, I always recommend that you check out your local
             Independent Record Store, where ever you are in the world. But if
-            you can&apos;t or there is no Independent Record Store locally to you,
-            Discogs is full of independent record sellers, worldwide that will
-            post records to you. I have used the Discogs marketplace many times,
-            with extremely positive experiences, but take note of the feedback
-            left for sellers.
+            you can&apos;t or there is no Independent Record Store locally to
+            you, Discogs is full of independent record sellers, worldwide that
+            will post records to you. I have used the Discogs marketplace many
+            times, with extremely positive experiences, but take note of the
+            feedback left for sellers.
           </p>
         </div>
         <div

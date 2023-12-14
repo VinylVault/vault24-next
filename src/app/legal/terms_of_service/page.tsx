@@ -14,13 +14,14 @@ export default function LegalTermsOfService() {
         <strong>https://www.thevinylvaultshow.co.uk</strong>
       </p>
       <p className="text-vault-text text-xl px-4 py-2">
-          These terms and conditions outline the rules and regulations for the
-          use of THE VINYL VAULT SHOW&apos;s Website.
+        These terms and conditions outline the rules and regulations for the use
+        of THE VINYL VAULT SHOW&apos;s Website.
       </p>
       <p className="text-vault-text text-xl px-4 py-2">
         By accessing this website we assume you accept these terms and
-        conditions in full. Do not continue to use THE VINYL VAULT SHOW&apos;s website if
-        you do not accept all of the terms and conditions stated on this page.
+        conditions in full. Do not continue to use THE VINYL VAULT SHOW&apos;s
+        website if you do not accept all of the terms and conditions stated on
+        this page.
       </p>
       <p className="text-vault-text text-xl px-4 py-2">
         The following terminology applies to these Terms and Conditions, Privacy
@@ -33,17 +34,18 @@ export default function LegalTermsOfService() {
         consideration of payment necessary to undertake the process of our
         assistance to the Client in the most appropriate manner, whether by
         formal meetings of a fixed duration, or any other means, for the express
-        purpose of meeting the Client&apos;s needs in respect of provision of the
-        Company&apos;s stated services/products, in accordance with and subject to,
-        prevailing law of United Kingdom. Any use of the above terminology or
-        other words in the singular, plural, capitalisation and/or he/she or
-        they, are taken as interchangeable and therefore as referring to same.
+        purpose of meeting the Client&apos;s needs in respect of provision of
+        the Company&apos;s stated services/products, in accordance with and
+        subject to, prevailing law of United Kingdom. Any use of the above
+        terminology or other words in the singular, plural, capitalisation
+        and/or he/she or they, are taken as interchangeable and therefore as
+        referring to same.
       </p>
       <h3 className="text-vault-text font-bold text-2xl py-4">Cookies</h3>
       <p className="text-vault-text text-xl px-4 py-2">
-        We employ the use of cookies. By using THE VINYL VAULT SHOW&apos;s website you
-        consent to the use of cookies in accordance with The Vinyl Vault&apos;s
-        privacy policy.
+        We employ the use of cookies. By using THE VINYL VAULT SHOW&apos;s
+        website you consent to the use of cookies in accordance with The Vinyl
+        Vault&apos;s privacy policy.
       </p>
       <p className="text-vault-text text-xl px-4 py-2">
         Most of the modern day interactive web sites use cookies to enable us to
@@ -54,9 +56,9 @@ export default function LegalTermsOfService() {
       </p>
       <h3 className="text-vault-text font-bold text-2xl py-4">License</h3>
       <p className="text-vault-text text-xl px-4 py-2">
-        Unless otherwise stated, The Vinyl Vault and/or it&apos;s licensors own the
-        intellectual property rights for all material on The Vinyl Vault. All
-        intellectual property rights are reserved. You may view and/or print
+        Unless otherwise stated, The Vinyl Vault and/or it&apos;s licensors own
+        the intellectual property rights for all material on The Vinyl Vault.
+        All intellectual property rights are reserved. You may view and/or print
         pages from https://www.thevinylvaultshow.co.uk for your own personal use
         subject to restrictions set in these terms and conditions.
       </p>
@@ -65,32 +67,34 @@ export default function LegalTermsOfService() {
         <ol>
           <li>
             <p className="text-vault-text text-xl px-16 py-2">
-                Republish material from https://www.thevinylvaultshow.co.uk or
-                its sub-pages
+              Republish material from https://www.thevinylvaultshow.co.uk or its
+              sub-pages
             </p>
           </li>
           <li>
             <p className="text-vault-text text-xl px-16 py-2">
-                Sell, rent or sub-license material from
-                https://www.thevinylvaultshow.co.uk or its sub-pages
+              Sell, rent or sub-license material from
+              https://www.thevinylvaultshow.co.uk or its sub-pages
             </p>
           </li>
           <li>
             <p className="text-vault-text text-xl px-16 py-2">
-                Reproduce, duplicate or copy material from
-                https://www.thevinylvaultshow.co.uk or its sub-pages
+              Reproduce, duplicate or copy material from
+              https://www.thevinylvaultshow.co.uk or its sub-pages
             </p>
           </li>
           <li>
             <p className="text-vault-text text-xl px-16 py-2">
-                Redistribute content from The Vinyl Vault (unless content is
-                specifically made for redistribution).
+              Redistribute content from The Vinyl Vault (unless content is
+              specifically made for redistribution).
             </p>
           </li>
         </ol>
       </p>
 
-      <h3 className="text-vault-text font-bold text-2xl py-4">Hyperlinking to our Content</h3>
+      <h3 className="text-vault-text font-bold text-2xl py-4">
+        Hyperlinking to our Content
+      </h3>
       <p className="text-vault-text text-xl px-4 py-2">
         The following organizations may link to our Web site without prior
         written approval:
@@ -102,9 +106,7 @@ export default function LegalTermsOfService() {
           </p>
         </li>
         <li>
-          <p className="text-vault-text text-xl px-16 py-2">
-            Search engines;
-          </p>
+          <p className="text-vault-text text-xl px-16 py-2">Search engines;</p>
         </li>
         <li>
           <p className="text-vault-text text-xl px-16 py-2">
@@ -128,8 +130,8 @@ export default function LegalTermsOfService() {
         <ol>
           <li>
             <p className="text-vault-text text-xl px-16 py-2">
-                Commonly-known consumer and/or business information sources such
-                as Chambers of Commerce;
+              Commonly-known consumer and/or business information sources such
+              as Chambers of Commerce;
             </p>
           </li>
           <li>
@@ -139,8 +141,8 @@ export default function LegalTermsOfService() {
           </li>
           <li>
             <p className="text-vault-text text-xl px-16 py-2">
-                Associations or other groups representing charities, including
-                charity giving sites,
+              Associations or other groups representing charities, including
+              charity giving sites,
             </p>
           </li>
           <li>
@@ -155,8 +157,8 @@ export default function LegalTermsOfService() {
           </li>
           <li>
             <p className="text-vault-text text-xl px-16 py-2">
-                Accounting, law and consulting firms whose primary clients are
-                businesses; and
+              Accounting, law and consulting firms whose primary clients are
+              businesses; and
             </p>
           </li>
           <li>
@@ -217,21 +219,21 @@ export default function LegalTermsOfService() {
         </li>
         <li>
           <p className="text-vault-text text-xl px-16 py-2">
-              By use of the uniform resource locator (Web address) being linked
-              to;
+            By use of the uniform resource locator (Web address) being linked
+            to;
           </p>
         </li>
         <li>
           <p className="text-vault-text text-xl px-16 py-2">
-              By use of any other description of our Web site or material being
-              linked to that makes sense within the context and format of
-              content on the linking party&apos;s site.
+            By use of any other description of our Web site or material being
+            linked to that makes sense within the context and format of content
+            on the linking party&apos;s site.
           </p>
         </li>
       </ol>
       <p className="text-vault-text text-xl px-4 py-2">
-        No use of The Vinyl Vault&apos;s logo or other artwork will be allowed for
-        linking absent a trademark license agreement.
+        No use of The Vinyl Vault&apos;s logo or other artwork will be allowed
+        for linking absent a trademark license agreement.
       </p>
       <h3 className="text-vault-text font-bold text-2xl py-4">Iframes</h3>
       <p className="text-vault-text text-xl px-4 py-2">
@@ -239,7 +241,9 @@ export default function LegalTermsOfService() {
         create frames around our Web pages or use other techniques that alter in
         any way the visual presentation or appearance of our Web site.
       </p>
-      <h3 className="text-vault-text font-bold text-2xl py-4">Reservation of Rights</h3>
+      <h3 className="text-vault-text font-bold text-2xl py-4">
+        Reservation of Rights
+      </h3>
       <p className="text-vault-text text-xl px-4 py-2">
         We reserve the right at any time and in its sole discretion to request
         that you remove all links or any particular link to our Web site. You
@@ -248,7 +252,9 @@ export default function LegalTermsOfService() {
         linking policy at any time. By continuing to link to our Web site, you
         agree to be bound to and abide by these linking terms and conditions.
       </p>
-      <h3 className="text-vault-text font-bold text-2xl py-4">Removal of links from our website</h3>
+      <h3 className="text-vault-text font-bold text-2xl py-4">
+        Removal of links from our website
+      </h3>
       <p className="text-vault-text text-xl px-4 py-2">
         If you find any link on our Web site or any linked web site
         objectionable for any reason, you may contact us about this. We will
@@ -261,7 +267,9 @@ export default function LegalTermsOfService() {
         commit to ensuring that the website remains available or that the
         material on the website is kept up to date.
       </p>
-      <h3 className="text-vault-text font-bold text-2xl py-4">Content Liability</h3>
+      <h3 className="text-vault-text font-bold text-2xl py-4">
+        Content Liability
+      </h3>
       <p className="text-vault-text text-xl px-4 py-2">
         We shall have no responsibility or liability for any content appearing
         on your Web site. You agree to indemnify and defend us against all

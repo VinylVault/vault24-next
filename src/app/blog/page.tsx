@@ -9,7 +9,7 @@ export const dynamic = 'force-dynamic';
 
 export default async function ShowArchiveList() {
   let localBlogPosts = await getAllBlogPosts();
-  console.log(localBlogPosts);
+  // console.log(localBlogPosts);
 
   return (
     <div className="flex min-h-screen flex-col items-center p-12 bg-vault-background">
@@ -21,10 +21,7 @@ export default async function ShowArchiveList() {
       </h3>
       <div className="grid gap-4 w-full md:grid-cols-3 grid-cols-1 py-8 mr-4">
         {localBlogPosts.map((blogPosts) => (
-          <BlogPostGridItems
-            key={blogPosts.blogPostSlug}
-            {...blogPosts}
-          />
+          <BlogPostGridItems key={blogPosts.blogPostSlug} {...blogPosts} />
         ))}
       </div>
     </div>

@@ -50,7 +50,7 @@ export function Sidebar() {
         }`}
       >
         <SmallSidebarItem Icon={Home} title="Home" url="/" />
-        <p className='pt-2 border-t-2 border-vault-border'/>
+        <p className="pt-2 border-t-2 border-vault-border" />
         <SmallSidebarItem Icon={Disc2} title="The Vault" url="/the_vault" />
         <SmallSidebarItem
           Icon={Headphones}
@@ -60,7 +60,7 @@ export function Sidebar() {
         <SmallSidebarItem Icon={Calendar} title="Schedule" url="/schedule" />
         <SmallSidebarItem Icon={PenLine} title="Blog" url="/blog" />
         <SmallSidebarItem Icon={ShieldQuestion} title="FAQs" url="/faqs" />
-        <p className='pt-2 border-t-2 border-vault-border'/>
+        <p className="pt-2 border-t-2 border-vault-border" />
         <SmallSidebarItem
           Icon={MessagesSquare}
           title="Contact"
@@ -88,12 +88,24 @@ export function Sidebar() {
           <PageHeaderFirstSection hidden={false} />
         </div>
         <LargeSidebarItem Icon={Home} title="Home" url="/" />
-        <p className='border-t-2 border-vault-border'/>
+        <p className="border-t-2 border-vault-border" />
         <LargeSidebarSection title="The Vinyl Vault" visibleCount={10}>
           <LargeSidebarItem Icon={Disc2} title="The Vault" url="/the_vault" />
-          <LargeSidebarItem Icon={Plus} title="Recent Additions" url="/the_vault" />
-          <LargeSidebarItem Icon={Library} title="Full Collection" url="/the_vault/releases" />
-          <LargeSidebarItem Icon={Mic2} title="Artist List" url="/the_vault/artists" />
+          <LargeSidebarItem
+            Icon={Plus}
+            title="Recent Additions"
+            url="/the_vault"
+          />
+          <LargeSidebarItem
+            Icon={Library}
+            title="Full Collection"
+            url="/the_vault/releases"
+          />
+          <LargeSidebarItem
+            Icon={Mic2}
+            title="Artist List"
+            url="/the_vault/artists"
+          />
           <LargeSidebarItem
             Icon={Headphones}
             title="Archive"
@@ -103,8 +115,8 @@ export function Sidebar() {
           <LargeSidebarItem Icon={PenLine} title="Blog" url="/blog" />
           <LargeSidebarItem Icon={ShieldQuestion} title="FAQs" url="/faqs" />
         </LargeSidebarSection>
-        <p className='border-t-2 border-vault-border'/>
-        <LargeSidebarSection title="Contact The Vinyl Vault" >
+        <p className="border-t-2 border-vault-border" />
+        <LargeSidebarSection title="Contact The Vinyl Vault">
           <LargeSidebarItem
             Icon={MessagesSquare}
             title="Contact"
@@ -132,7 +144,7 @@ export function Sidebar() {
             url="https://www.discogs.com/user/DexVinyl"
           />
         </LargeSidebarSection>
-        <p className='border-t-2 border-vault-border'/>
+        <p className="border-t-2 border-vault-border" />
         <LargeSidebarSection title="Treat The Vinyl Vault">
           <LargeSidebarItem
             Icon={Coffee}
@@ -140,7 +152,7 @@ export function Sidebar() {
             url="/buy_a_coffee"
           />
         </LargeSidebarSection>
-        <p className='border-t-2 border-vault-border'/>
+        <p className="border-t-2 border-vault-border" />
         <LargeSidebarSection title="Legal">
           <LargeSidebarItem
             Icon={Cookie}
@@ -163,7 +175,7 @@ export function Sidebar() {
             url="/legal/show_subscription_terms"
           />
         </LargeSidebarSection>
-        <p className='border-t-2 border-vault-border'/>
+        <p className="border-t-2 border-vault-border" />
       </aside>
     </>
   );
@@ -240,7 +252,7 @@ function LargeSidebarSection({
     ? childrenArray
     : childrenArray.slice(0, visibleCount);
   const ButtonIcon = isExpanded ? ChevronUp : ChevronDown;
-// https://youtu.be/ymGB1lqP1CM?t=5146
+  // https://youtu.be/ymGB1lqP1CM?t=5146
   return (
     <div>
       {title && (

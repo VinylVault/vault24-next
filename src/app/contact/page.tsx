@@ -4,9 +4,5 @@ import Image from 'next/image';
 
 export default async function Contact() {
   const latestBlogPost = await getLatestBlogPost();
-  return (
-    <div>
-
-    </div>
-  )
+  return <div></div>;
 }

@@ -1,9 +1,10 @@
 import Image from 'next/image';
-import { getOnePlaylist } from '@/api/playlist';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { TagDisplay, UserDisplay } from '@/components/PostContents';
 import { TrackGridItemsWithArt } from '@/components/TrackGridItems';
+import { getOneBlogPost } from '@/api/blog';
+import { ReleaseGridItems } from '@/components/ReleaseGridItems';
 
 export const dynamic = 'force-dynamic';
 
@@ -33,35 +34,34 @@ async function RadioStationDisplay({
 export default async function ShowArchiveList({
   params,
 }: {
-  params: { blogPlaylistSlug: string };
+  params: { blogPostSlug: string };
 }) {
-  let localPlaylists = await getOnePlaylist(params.blogPlaylistSlug);
-  console.log(localPlaylists);
+  let localBlogposts = await getOneBlogPost(params.blogPostSlug);
+  console.log('localBlogposts', localBlogposts);
 
   return (
     <div className="flex min-h-screen flex-col p-12 bg-vault-background">
       <h2 className="text-6xl font-bold font-title text-center text-vault-title">
-        The Vinyl Vault Show Archive:
+        The Vinyl Vault Show Blog:
         <br />
-        {localPlaylists?.blogPlaylistTitle}
+        {localBlogposts?.blogPostTitle}
       </h2>
       <h3 className="text-4xl font-bold font-title text-center text-vault-genre">
-        Broadcast Date:{' '}
-        {localPlaylists?.blogPlaylistPublishDate.toLocaleString()}
+        Published Date: {localBlogposts?.blogPostPublishDate.toLocaleString()}
       </h3>
       <h3 className="text-4xl font-bold font-title text-center text-vault-genre">
-        Last Updated At: {localPlaylists?.updatedAt.toLocaleString()}
+        Last Updated At: {localBlogposts?.updatedAt.toLocaleString()}
       </h3>
       <div className="p-6 grid gap-4 w-full md:grid-cols-2 grid-cols-1">
         <div className="grid-span-1 rounded-3xl relative w-full overflow-hidden aspect-video border-t-4 border-r-4 border-b-4 border-vault-border">
           <Image
-            src={localPlaylists?.blogPlaylistImage || '/assets/vinyl_PNG21.png'}
+            src={localBlogposts?.blogPostImage || '/assets/vinyl_PNG21.png'}
             alt={
-              localPlaylists?.blogPlaylistTitle ||
+              localBlogposts?.blogPostTitle ||
               'The Vinyl Vault Show - Default Show Image'
             }
             title={
-              localPlaylists?.blogPlaylistTitle ||
+              localBlogposts?.blogPostTitle ||
               'The Vinyl Vault Show - Default Show Image'
             }
             width={1000}
@@ -75,21 +75,11 @@ export default async function ShowArchiveList({
           <p className="px-8 pt-2 text-vault-text font-title text-2xl text-center">
             Broadcast On:{' '}
           </p>
-          <p className="text-center px-8 break-before-auto">
-            {localPlaylists?.bookedShows[0].radioStationDetails.map(
-              (radioStation) => (
-                <RadioStationDisplay
-                  key={radioStation.radioStationDetailsSlug}
-                  {...radioStation}
-                />
-              ),
-            )}
-          </p>
           <p className="px-8 pt-2 text-vault-text font-title text-2xl text-center">
             Tagged With:{' '}
           </p>
           <p className="text-center px-8">
-            {localPlaylists?.globalTags.map((tags) => (
+            {localBlogposts?.globalTags.map((tags) => (
               <TagDisplay key={tags.tagSlug} {...tags} />
               //
             ))}
@@ -98,32 +88,20 @@ export default async function ShowArchiveList({
             Author:{' '}
           </p>
           <p className="text-center px-8 break-before-auto">
-            {localPlaylists?.userAccounts.map((userAccount) => (
+            {localBlogposts?.userAccounts.map((userAccount) => (
               <UserDisplay key={userAccount.userAccountSlug} {...userAccount} />
             ))}
           </p>
         </div>
       </div>
-      {localPlaylists?.blogPlayListListenAgain}
-      {localPlaylists?.trackOnPlaylist.map((trackList) => (
-        <div key={trackList.trackOnPlaylistId} {...trackList}>
-          {trackList.trackPlanning.length > 0 && (
-            <p className="bg-vault-menubar text-vault-live text-xl px-8 font-bold text-center mx-12 rounded-t-xl">
-              📢 📢 LISTENER REQUEST 📢 📢{' REQUESTED BY: '}
-              {trackList.trackPlanning[0].requestedBy?.toUpperCase()} 📢 📢
-            </p>
-          )}
-
-          {trackList.trackFeature && trackList.trackPlanning.length == 0 && (
-            <p className="bg-vault-menubar text-vault-title text-xl px-8 font-bold text-center mx-12 rounded-t-xl">
-              {trackList.trackFeature.replace(/_/g, ' ').toUpperCase()}
-            </p>
-          )}
-          {trackList.libraryTracks.map((track) => (
-            <TrackGridItemsWithArt key={track.trackSlug} {...track} />
-          ))}
-        </div>
-      ))}
+      {localBlogposts && localBlogposts?.blogPostType.length > 0 && (
+        // {localBlogposts.blogPostType[0].postTypes === 'Album Review' && (
+        // {localBlogposts?.libraryReleases[0].map((release) => (
+        //   <ReleaseGridItems key={release.releaseSlug} {...release} />
+        // ))}
+        <p>poke</p>
+        // )}
+      )}
     </div>
   );
 }

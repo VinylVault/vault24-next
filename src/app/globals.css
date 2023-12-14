@@ -5,17 +5,17 @@
 @tailwind utilities;
 
 *::-webkit-scrollbar {
-    @apply bg-transparent w-2;
+  @apply bg-transparent w-2;
 }
 
 *::-webkit-scrollbar-thumb {
-    @apply bg-vault-menubar rounded-full;
+  @apply bg-vault-menubar rounded-full;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-    @apply bg-vault-text rounded-full;
+  @apply bg-vault-text rounded-full;
 }
 
 .scrollbar-hidden:hover::-webkit-scrollbar {
-    @apply bg-vault-background
+  @apply bg-vault-background;
 }

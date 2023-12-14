@@ -82,13 +82,10 @@ export default async function About() {
         or on DAB or FM radio.
       </p>
       <div className="grid md:grid-cols-2 grid-cols-1 p-4 gap-16 px-32">
-      {latestBlogPost.map((blogPosts) => (
-          <BlogPostGridItems
-            key={blogPosts.blogPostSlug}
-            {...blogPosts}
-          />
+        {latestBlogPost.map((blogPosts) => (
+          <BlogPostGridItems key={blogPosts.blogPostSlug} {...blogPosts} />
         ))}
-        
+
         {latestPlayList.map((showArchive) => (
           <ShowArchiveGridItems
             key={showArchive.blogPlaylistSlug}
