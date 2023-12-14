@@ -32,12 +32,11 @@ export async function getRecentReleases() {
     take: 50,
   });
   // console.log(getRecentReleases);
-  await prisma.$disconnect()
+  await prisma.$disconnect();
   return getRecentReleases;
 }
 
 export async function getAllReleases() {
-  
   const getReleaseList = await prisma.libraryReleases.findMany({
     include: {
       libraryArtists: true,
@@ -66,11 +65,11 @@ export async function getAllReleases() {
     },
   });
   // console.log(getReleaseList);
-  await prisma.$disconnect()
+  await prisma.$disconnect();
   return getReleaseList;
 }
 
-export async function getOneRelease(releaseSlug:string) {
+export async function getOneRelease(releaseSlug: string) {
   // console.log(releaseSlug)
   const getReleaseDetails = await prisma.libraryReleases.findUnique({
     include: {
@@ -87,14 +86,14 @@ export async function getOneRelease(releaseSlug:string) {
         },
         orderBy: {
           trackSlug: 'asc',
-        }
-      }
+        },
+      },
     },
     where: {
       releaseSlug,
     },
   });
   // console.log(getReleaseDetails);
-  await prisma.$disconnect()
+  await prisma.$disconnect();
   return getReleaseDetails;
 }

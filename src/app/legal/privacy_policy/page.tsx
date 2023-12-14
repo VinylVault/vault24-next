@@ -27,7 +27,9 @@ export default function LegalPrivacyPolicy() {
         VINYL VAULT SHOW&apos;s (TVVS) data protection standards; and to comply
         with the law in compliance with the GDPR legislation of May 2018.
       </p>
-      <h3 className="text-vault-text font-bold text-2xl py-4">Why This Policy Exists</h3>
+      <h3 className="text-vault-text font-bold text-2xl py-4">
+        Why This Policy Exists
+      </h3>
       <p className="text-vault-text text-xl px-4 py-2">
         This privacy policy ensures THE VINYL VAULT SHOW:
       </p>
@@ -53,7 +55,9 @@ export default function LegalPrivacyPolicy() {
           </p>
         </li>
       </ul>
-      <h3 className="text-vault-text font-bold text-2xl py-4">Data Protection Law</h3>
+      <h3 className="text-vault-text font-bold text-2xl py-4">
+        Data Protection Law
+      </h3>
       <p className="text-vault-text text-xl px-4 py-2">
         These rules apply regardless of whether data is stored electronically,
         on paper or on other materials.
@@ -149,7 +153,9 @@ export default function LegalPrivacyPolicy() {
           </p>
         </li>
       </ul>
-      <h3 className="text-vault-text font-bold text-2xl py-4">Data Protection Risks</h3>
+      <h3 className="text-vault-text font-bold text-2xl py-4">
+        Data Protection Risks
+      </h3>
       <p className="text-vault-text text-xl px-4 py-2">
         This policy helps to protect GDPR.co.uk from some very real data
         security risks, including:
@@ -175,7 +181,9 @@ export default function LegalPrivacyPolicy() {
           </p>
         </li>
       </ul>
-      <h3 className="text-vault-text font-bold text-2xl py-4">Responsibilities:</h3>
+      <h3 className="text-vault-text font-bold text-2xl py-4">
+        Responsibilities:
+      </h3>
       <p className="text-vault-text text-xl px-4 py-2">
         Everyone who works for, or with THE VINYL VAULT SHOW, has some
         responsibility for ensuring that data is collected, stored and handled

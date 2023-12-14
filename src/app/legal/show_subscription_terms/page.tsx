@@ -29,9 +29,9 @@ export default function LegalShowSubscriptionTerms() {
       <p className="text-vault-text text-xl px-4 py-2">
         By signing up for our subscription service, you agree to making the
         agreed subscription payment to The Vinyl Vault Show via PayPal on the
-        agreed date each month, for a period of 12 months, should you cancel
-        the service before the end of the minimum period, at our discretion, we
-        may charge you a cancellation fee of no more than the remaining monthly
+        agreed date each month, for a period of 12 months, should you cancel the
+        service before the end of the minimum period, at our discretion, we may
+        charge you a cancellation fee of no more than the remaining monthly
         fees.
       </p>
       <p className="text-vault-text text-xl px-4 py-2">

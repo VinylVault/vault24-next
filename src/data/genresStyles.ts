@@ -1,4 +1,3 @@
-
 export const genres = [
   'ALL',
   'Rock',

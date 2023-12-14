@@ -14,7 +14,7 @@ export default async function TheVault() {
       <h3 className="text-4xl font-bold font-title text-vault-genre">
         Recent Releases
       </h3>
-      <div className="grid gap-4 lg:grid-cols-5 md:grid-cols-2 grid-cols-1 mr-4">
+      <div className="grid gap-12 lg:grid-cols-5 md:grid-cols-2 grid-cols-1 mr-4">
         <Suspense fallback={<p>Loading Recent Releases</p>}>
           {localRecentReleases.map((releaseList: any) => (
             <ReleaseGridItems key={releaseList.releaseSlug} {...releaseList} />

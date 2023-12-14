@@ -1,30 +1,27 @@
-"use client"
+'use client';
 
-import type { Metadata } from 'next'
-import { useState } from 'react'
-import { genres } from "@/data/genresStyles"
-import { PageHeader } from '@/components/PageHeader'
-import { PageFooter } from '@/components/PageFooter'
-import { GenrePills } from '@/components/GenrePills'
-import { Sidebar } from '@/components/Sidebar'
+import type { Metadata } from 'next';
+import { useState } from 'react';
+import { genres } from '@/data/genresStyles';
+import { PageHeader } from '@/components/PageHeader';
+import { PageFooter } from '@/components/PageFooter';
+import { GenrePills } from '@/components/GenrePills';
+import { Sidebar } from '@/components/Sidebar';
 
-import './globals.css'
-import { SidebarProvider } from '@/contexts/SidebarContext'
+import './globals.css';
+import { SidebarProvider } from '@/contexts/SidebarContext';
 
-
-
-  
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
-  const [selectedGenre, setSelectedGenre] = useState(genres)
+  const [selectedGenre, setSelectedGenre] = useState(genres);
   return (
     <html lang="en">
       <body className="bg-vault-background">
         <SidebarProvider>
-          <div className="max-h-screen flex flex-col" >
+          <div className="flex flex-col">
             <PageHeader />
             <div className="grid grid-cols-[auto,1fr] flex-grow-1 overflow-auto">
               <Sidebar />
@@ -36,15 +33,13 @@ export default function RootLayout({
                     onSelect={setSelectedGenre} 
                   />
                 </div> */}
-                <div>
-                  {children}
-                </div>
+                <div>{children}</div>
               </div>
             </div>
             <PageFooter />
           </div>
-          </SidebarProvider>
+        </SidebarProvider>
       </body>
     </html>
-  )
+  );
 }
